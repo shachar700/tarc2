@@ -161,6 +161,11 @@ const u32 gObjectEventPic_ContestJudge[] = INCBIN_U32("graphics/object_events/pi
 const u32 gObjectEventPic_Archie[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/archie.4bpp");
 const u32 gObjectEventPic_Maxie[] = INCBIN_U32("graphics/object_events/pics/people/team_magma/maxie.4bpp");
 const u32 gObjectEventPic_Regi[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/regi.4bpp");
+
+const u32 gObjectEventPic_Wooloo2[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/wooloo.4bpp");
+const u16 gObjectEventPal_Wooloo2[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/wooloo.gbapal");
+const u32 gObjectEventPic_Obstagoon2[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/obstagoon.4bpp");
+const u16 gObjectEventPal_Obstagoon2[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/obstagoon.gbapal");
 const u32 gObjectEventPic_RayquazaStill[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/rayquaza_still.4bpp");
 const u32 gObjectEventPic_TuberMSwimming[] = INCBIN_U32("graphics/object_events/pics/people/tuber_m_swimming.4bpp");
 const u32 gObjectEventPic_Mom[] = INCBIN_U32("graphics/object_events/pics/people/mom.4bpp");
