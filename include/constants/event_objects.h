@@ -247,8 +247,8 @@
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
 
-#define OBJ_EVENT_GFX_OBSTAGOON                  242
-#define OBJ_EVENT_GFX_WOOLOO                     243
+#define OBJ_EVENT_GFX_MY_OBSTAGOON               242
+#define OBJ_EVENT_GFX_MY_WOOLOO                  243
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit

@@ -4691,7 +4691,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Obstagoon = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MyObstagoon = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_OBSTAGOON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -4706,18 +4706,18 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Obstagoon = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Following,
-    .images = sPicTable_Obstagoon,
+    .images = sPicTable_MyObstagoon,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wooloo = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MyWooloo = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_WOOLOO,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
     .height = 32,
-    .paletteSlot = PALSLOT_NPC_2,
+    .paletteSlot = PALSLOT_NPC_1,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,
@@ -4725,6 +4725,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wooloo = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Following,
-    .images = sPicTable_Wooloo,
+    .images = sPicTable_MyWooloo,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

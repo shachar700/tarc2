@@ -525,8 +525,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
-    {gObjectEventPal_Wooloo2,                OBJ_EVENT_PAL_TAG_WOOLOO},
-    {gObjectEventPal_Obstagoon2,             OBJ_EVENT_PAL_TAG_OBSTAGOON},
+    {gObjectEventPal_MyObstagoon,           OBJ_EVENT_PAL_TAG_OBSTAGOON},
+    {gObjectEventPal_MyWooloo,              OBJ_EVENT_PAL_TAG_WOOLOO},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -1003,11 +1003,11 @@ const u8 gWalkNormalMovementActions[] = {
     [DIR_EAST] = MOVEMENT_ACTION_WALK_NORMAL_RIGHT,
 };
 const u8 gWalkFastMovementActions[] = {
-    [DIR_NONE] = MOVEMENT_ACTION_WALK_FAST_DOWN,
-    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_FAST_DOWN,
-    [DIR_NORTH] = MOVEMENT_ACTION_WALK_FAST_UP,
-    [DIR_WEST] = MOVEMENT_ACTION_WALK_FAST_LEFT,
-    [DIR_EAST] = MOVEMENT_ACTION_WALK_FAST_RIGHT,
+    [DIR_NONE] = MOVEMENT_ACTION_WALK_NORMAL_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_NORMAL_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_WALK_NORMAL_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_WALK_NORMAL_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_WALK_NORMAL_RIGHT,
 };
 const u8 gRideWaterCurrentMovementActions[] = {
     [DIR_NONE] = MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN,

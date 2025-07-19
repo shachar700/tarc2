@@ -4424,8 +4424,8 @@
     {
       "id": "LAYOUT_OBSTAGOON_RUNAWAY",
       "name": "ObstagoonRunaway_Layout",
-      "width": 14,
-      "height": 34,
+      "width": 11,
+      "height": 64,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/ObstagoonRunaway/border.bin",

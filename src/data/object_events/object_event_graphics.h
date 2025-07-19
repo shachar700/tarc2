@@ -162,10 +162,11 @@ const u32 gObjectEventPic_Archie[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Maxie[] = INCBIN_U32("graphics/object_events/pics/people/team_magma/maxie.4bpp");
 const u32 gObjectEventPic_Regi[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/regi.4bpp");
 
-const u32 gObjectEventPic_Wooloo2[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/wooloo.4bpp");
-const u16 gObjectEventPal_Wooloo2[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/wooloo.gbapal");
-const u32 gObjectEventPic_Obstagoon2[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/obstagoon.4bpp");
-const u16 gObjectEventPal_Obstagoon2[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/obstagoon.gbapal");
+const u32 gObjectEventPic_MyObstagoon[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/obstagoon.4bpp");
+const u32 gObjectEventPic_MyWooloo[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/wooloo.4bpp");
+const u16 gObjectEventPal_MyObstagoon[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/obstagoon.gbapal");
+const u16 gObjectEventPal_MyWooloo[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/wooloo.gbapal");
+
 const u32 gObjectEventPic_RayquazaStill[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/rayquaza_still.4bpp");
 const u32 gObjectEventPic_TuberMSwimming[] = INCBIN_U32("graphics/object_events/pics/people/tuber_m_swimming.4bpp");
 const u32 gObjectEventPic_Mom[] = INCBIN_U32("graphics/object_events/pics/people/mom.4bpp");
@@ -301,7 +302,7 @@ const u32 gFieldEffectObjectPic_ShadowExtraLarge[] = INCBIN_U32("graphics/field_
 const u32 gFieldEffectObjectPic_BallLight[] = INCBIN_U32("graphics/object_events/pics/misc/light.4bpp");
 const u32 gFieldEffectObjectPic_PokeCenterLight[] = INCBIN_U32("graphics/object_events/pics/misc/poke_center_light.4bpp");
 const u32 gFieldEffectObjectPic_MartLight[] = INCBIN_U32("graphics/object_events/pics/misc/mart_light.4bpp");
-const u8 gFieldEffectPic_CutGrass[] = INCBIN_U8("graphics/field_effects/pics/cut_grass.4bpp");
+const u8  gFieldEffectPic_CutGrass[] = INCBIN_U8("graphics/field_effects/pics/cut_grass.4bpp");
 const u32 gFieldEffectPic_CutGrass_Copy[] = INCBIN_U32("graphics/field_effects/pics/cut_grass.4bpp");
 const u16 gFieldEffectPal_CutGrass[] = INCBIN_U16("graphics/field_effects/palettes/cut_grass.gbapal");
 const u32 gFieldEffectObjectPic_Ripple[] = INCBIN_U32("graphics/field_effects/pics/ripple.4bpp");

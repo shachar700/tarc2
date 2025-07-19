@@ -1108,14 +1108,6 @@ static const struct SpriteFrameImage sPicTable_Brandon[] = {
     overworld_ascending_frames(gObjectEventPic_Brandon, 2, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_Wooloo[] = {
-    overworld_ascending_frames(gObjectEventPic_Wooloo2, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_Obstagoon[] = {
-    overworld_ascending_frames(gObjectEventPic_Obstagoon2, 4, 4),
-};
-
 static const struct SpriteFrameImage sPicTable_PokeBall[] = {
     overworld_frame(gObjectEventPic_PokeBall, 2, 4, 0),
     overworld_frame(gObjectEventPic_PokeBall, 2, 4, 1),
@@ -1363,4 +1355,12 @@ static const struct SpriteFrameImage sPicTable_KirliaOld[] = {
 
 static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
     overworld_ascending_frames(gObjectEventPic_RubySapphireMayNormal, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_MyObstagoon[] = {
+    overworld_ascending_frames(gObjectEventPic_MyObstagoon, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_MyWooloo[] = {
+    overworld_ascending_frames(gObjectEventPic_MyWooloo, 4, 4),
 };

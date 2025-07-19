@@ -15,46 +15,68 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_WOOLOO_LEFT",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
       "x": 15,
       "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "WoolooPasture_EventScript_LeftWooloo",
+      "flag": "FLAG_WOOLOO_PASTURE_WOOLOO_LEFT"
     },
     {
+      "local_id": "LOCALID_SHINY_WOOLOO",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_SHINY(WOOLOO)",
       "x": 16,
       "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "WoolooPasture_EventScript_ShinyWooloo",
+      "flag": "FLAG_WOOLOO_PASTURE_SHINY_WOOLOO"
     },
     {
+      "local_id": "LOCALID_WOOLOO_RIGHT",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
       "x": 17,
       "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "WoolooPasture_EventScript_RightWooloo",
+      "flag": "FLAG_WOOLOO_PASTURE_WOOLOO_RIGHT"
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_WOOLOO_PASTURE_STATE",
+      "var_value": "0",
+      "script": "WoolooPasture_EventScript_Trigger_WoolooPanic"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_WOOLOO_PASTURE_STATE",
+      "var_value": "0",
+      "script": "WoolooPasture_EventScript_Trigger_WoolooPanic"
+    }
+  ],
   "bg_events": []
 }

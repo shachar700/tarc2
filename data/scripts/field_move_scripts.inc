@@ -238,12 +238,12 @@ EventScript_StrengthBoulder::
 	goto EventScript_ActivateStrength
 	end
 
-EventScript_UseStrength::
-	lockall
-	dofieldeffect FLDEFF_USE_STRENGTH
-	waitstate
-	goto EventScript_ActivateStrength
-	end
+@EventScript_UseStrength::
+@	lockall
+@	dofieldeffect FLDEFF_USE_STRENGTH
+@	waitstate
+@	goto EventScript_ActivateStrength
+@	end
 
 EventScript_ActivateStrength::
 	setflag FLAG_SYS_USE_STRENGTH

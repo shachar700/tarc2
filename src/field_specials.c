@@ -4361,3 +4361,12 @@ void GetCodeFeedback(void)
     else
         gSpecialVar_Result = 0;
 }
+
+void ToggleGender(void) 
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        gSaveBlock2Ptr->playerGender = FEMALE;
+    else
+        gSaveBlock2Ptr->playerGender = MALE;
+    ScriptContext_Enable();
+}
