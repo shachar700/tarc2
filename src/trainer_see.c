@@ -360,6 +360,7 @@ static const struct SpriteTemplate sSpriteTemplate_Emote =
 bool8 CheckForTrainersWantingBattle(void)
 {
     u8 i;
+    u8 numTrainers = 0;
 
     if (FlagGet(OW_FLAG_NO_TRAINER_SEE))
         return FALSE;
@@ -369,23 +370,18 @@ bool8 CheckForTrainersWantingBattle(void)
 
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
     {
-        u8 numTrainers;
-
         if (!gObjectEvents[i].active)
             continue;
-        if (gObjectEvents[i].trainerType != TRAINER_TYPE_NORMAL && gObjectEvents[i].trainerType != TRAINER_TYPE_BURIED)
+
+        if (gObjectEvents[i].trainerType != TRAINER_TYPE_NORMAL &&
+            gObjectEvents[i].trainerType != TRAINER_TYPE_BURIED &&
+            gObjectEvents[i].trainerType < TRAINER_TYPE_RUN_SCRIPT)
             continue;
 
         numTrainers = CheckTrainer(i);
-        if (numTrainers == 0xFF) // non-trainerbatle script
-        {
-            u32 objectEventId = gApproachingTrainers[gNoOfApproachingTrainers - 1].objectEventId;
-            gSelectedObjectEvent = objectEventId;
-            gSpecialVar_LastTalked = gObjectEvents[objectEventId].localId;
-            ScriptContext_SetupScript(EventScript_ObjectApproachPlayer);
-            LockPlayerFieldControls();
-            return TRUE;
-        }
+
+        if (numTrainers == 0xFF)
+            continue; // handled after loop
 
         if (numTrainers == 2)
             break;
@@ -395,15 +391,32 @@ bool8 CheckForTrainersWantingBattle(void)
 
         if (gNoOfApproachingTrainers > 1)
             break;
-        if (GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS) // one trainer found and cant have a double battle
+
+        if (GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS)
             break;
+    }
+
+    if (gNoOfApproachingTrainers == 0)
+    {
+        gTrainerApproachedPlayer = FALSE;
+        return FALSE;
+    }
+
+    if (gApproachingTrainers[gNoOfApproachingTrainers - 1].radius == 0xFF)
+    {
+        u32 objectEventId = gApproachingTrainers[gNoOfApproachingTrainers - 1].objectEventId;
+        gSelectedObjectEvent = objectEventId;
+        gSpecialVar_LastTalked = gObjectEvents[objectEventId].localId;
+        ScriptContext_SetupScript(EventScript_ObjectApproachPlayer);
+        LockPlayerFieldControls();
+        return TRUE;
     }
 
     if (gNoOfApproachingTrainers == 1)
     {
         ResetTrainerOpponentIds();
-        ConfigureAndSetUpOneTrainerBattle(gApproachingTrainers[gNoOfApproachingTrainers - 1].objectEventId,
-                                          gApproachingTrainers[gNoOfApproachingTrainers - 1].trainerScriptPtr);
+        ConfigureAndSetUpOneTrainerBattle(gApproachingTrainers[0].objectEventId,
+                                          gApproachingTrainers[0].trainerScriptPtr);
         gTrainerApproachedPlayer = TRUE;
         return TRUE;
     }
@@ -420,12 +433,11 @@ bool8 CheckForTrainersWantingBattle(void)
         gTrainerApproachedPlayer = TRUE;
         return TRUE;
     }
-    else
-    {
-        gTrainerApproachedPlayer = FALSE;
-        return FALSE;
-    }
+
+    gTrainerApproachedPlayer = FALSE;
+    return FALSE;
 }
+
 
 static u8 CheckTrainer(u8 objectEventId)
 {
@@ -433,10 +445,12 @@ static u8 CheckTrainer(u8 objectEventId)
     u8 numTrainers = 1;
 
     u8 approachDistance = GetTrainerApproachDistance(&gObjectEvents[objectEventId]);
+    u16 scriptFlag = GetObjectEventTrainerSightFlagByObjectEventId(objectEventId);
+
     if (approachDistance == 0)
         return 0;
 
-    if (InTrainerHill() == TRUE)
+    if (InTrainerHill())
     {
         trainerBattlePtr = scriptPtr = GetTrainerHillTrainerScript();
     }
@@ -446,37 +460,47 @@ static u8 CheckTrainer(u8 objectEventId)
         struct ScriptContext ctx;
         if (RunScriptImmediatelyUntilEffect(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE | SCREFF_TRAINERBATTLE, scriptPtr, &ctx))
         {
-            if (*ctx.scriptPtr == 0x5c) // trainerbattle
+            if (*ctx.scriptPtr == 0x5C) // trainerbattle command
                 trainerBattlePtr = ctx.scriptPtr;
             else
                 trainerBattlePtr = NULL;
         }
         else
         {
-            return 0; // no effect
+            return 0;
         }
     }
 
-    if (InBattlePyramid())
+    if (InBattlePyramid() && GetBattlePyramidTrainerFlag(objectEventId))
+        return 0;
+    if (InTrainerHill() && GetHillTrainerFlag(objectEventId))
+        return 0;
+
+    // RUN_SCRIPT type
+    if (scriptFlag >= TRAINER_TYPE_RUN_SCRIPT)
     {
-        if (GetBattlePyramidTrainerFlag(objectEventId))
+        if (!FlagGet(scriptFlag) && scriptPtr != NULL)
+        {
+            FlagSet(scriptFlag);
+
+            gApproachingTrainers[gNoOfApproachingTrainers].objectEventId = objectEventId;
+            gApproachingTrainers[gNoOfApproachingTrainers].trainerScriptPtr = scriptPtr;
+            gApproachingTrainers[gNoOfApproachingTrainers].radius = 0xFF; // signal script mode
+            InitTrainerApproachTask(&gObjectEvents[objectEventId], approachDistance - 1);
+            gNoOfApproachingTrainers++;
+            return 0xFF;
+        }
+        else
+        {
             return 0;
-    }
-    else if (InTrainerHill() == TRUE)
-    {
-        if (GetHillTrainerFlag(objectEventId))
-            return 0;
-    }
-    else if (trainerBattlePtr)
-    {
-        if (GetTrainerFlagFromScriptPointer(trainerBattlePtr))
-            return 0;
-    }
-    else
-    {
-        numTrainers = 0xFF;
+        }
     }
 
+    // Normal battle-type trainer
+    if (trainerBattlePtr && GetTrainerFlagFromScriptPointer(trainerBattlePtr))
+        return 0;
+
+    // Check for double battle
     if (trainerBattlePtr)
     {
         TrainerBattleParameter *temp = (TrainerBattleParameter *)(trainerBattlePtr + 1);
@@ -486,7 +510,6 @@ static u8 CheckTrainer(u8 objectEventId)
         {
             if (GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS)
                 return 0;
-
             numTrainers = 2;
         }
     }
@@ -507,17 +530,19 @@ static u8 GetTrainerApproachDistance(struct ObjectEvent *trainerObj)
     u8 approachDistance;
 
     PlayerGetDestCoords(&x, &y);
-    if (trainerObj->trainerType == TRAINER_TYPE_NORMAL)  // can only see in one direction
+
+    if (trainerObj->trainerType == TRAINER_TYPE_NORMAL || trainerObj->trainerType >= TRAINER_TYPE_RUN_SCRIPT)
     {
         approachDistance = sDirectionalApproachDistanceFuncs[trainerObj->facingDirection - 1](trainerObj, trainerObj->trainerRange_berryTreeId, x, y);
-        return CheckPathBetweenTrainerAndPlayer(trainerObj, approachDistance, trainerObj->facingDirection);
+        if (CheckPathBetweenTrainerAndPlayer(trainerObj, approachDistance, trainerObj->facingDirection))
+            return approachDistance;
     }
-    else // TRAINER_TYPE_SEE_ALL_DIRECTIONS, TRAINER_TYPE_BURIED
+    else
     {
         for (i = 0; i < ARRAY_COUNT(sDirectionalApproachDistanceFuncs); i++)
         {
             approachDistance = sDirectionalApproachDistanceFuncs[i](trainerObj, trainerObj->trainerRange_berryTreeId, x, y);
-            if (CheckPathBetweenTrainerAndPlayer(trainerObj, approachDistance, i + 1)) // directions are 1-4 instead of 0-3. south north west east
+            if (CheckPathBetweenTrainerAndPlayer(trainerObj, approachDistance, i + 1))
                 return approachDistance;
         }
     }

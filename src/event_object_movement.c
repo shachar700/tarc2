@@ -525,8 +525,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
-    {gObjectEventPal_Wooloo2,               OBJ_EVENT_PAL_TAG_WOOLOO},
-    {gObjectEventPal_Obstagoon2,               OBJ_EVENT_PAL_TAG_OBSTAGOON},
+    {gObjectEventPal_Wooloo2,                OBJ_EVENT_PAL_TAG_WOOLOO},
+    {gObjectEventPal_Obstagoon2,             OBJ_EVENT_PAL_TAG_OBSTAGOON},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -2275,6 +2275,8 @@ void RemoveFollowingPokemon(void)
 // Determine whether follower *should* be visible
 bool32 IsFollowerVisible(void)
 {
+    if(FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+        return FALSE;
     return !(TestPlayerAvatarFlags(FOLLOWER_INVISIBLE_FLAGS)
             || MetatileBehavior_IsSurfableWaterOrUnderwater(gObjectEvents[gPlayerAvatar.objectEventId].previousMetatileBehavior)
             || MetatileBehavior_IsForcedMovementTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior));
@@ -11323,6 +11325,12 @@ bool8 MovementActionFunc_RunSlow_Step1(struct ObjectEvent *objectEvent, struct S
     return FALSE;
 }
 
+// trainer custom scripts
+u16 GetObjectEventTrainerSightFlagByObjectEventId(u8 objEventId)
+{
+    // ideally, would use a the last two bytes of the object event template
+    return GetObjectEventTemplateByLocalIdAndMap(gObjectEvents[objEventId].localId, gObjectEvents[objEventId].mapNum, gObjectEvents[objEventId].mapGroup)->trainerType;
+}
 static bool8 UpdateWalkSlowStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateWalkSlowStairsAnim(sprite))
