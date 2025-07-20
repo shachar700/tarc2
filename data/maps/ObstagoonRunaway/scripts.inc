@@ -5,6 +5,7 @@ ObstagoonRunaway_EventScript_Caught::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MALE, FALSE
+	playse SE_PIN
 	waitse
 	playmoncry SPECIES_OBSTAGOON, CRY_MODE_NORMAL
 	msgbox ObstagoonRunaway_Text_Obstagoon, MSGBOX_DEFAULT

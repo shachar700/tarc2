@@ -3244,3 +3244,13 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
     if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         StopScript(ctx);
 }
+
+bool8 ScrCmd_togglegender(struct ScriptContext *ctx)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        gSaveBlock2Ptr->playerGender = FEMALE;
+    else
+        gSaveBlock2Ptr->playerGender = MALE;
+
+    return FALSE; // continue script immediately
+}

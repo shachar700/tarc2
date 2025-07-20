@@ -8,8 +8,7 @@ WoolooPasture_OnFrame:
 
 WoolooPasture_EventScript_Completed:
 	msgbox WoolooPasture_Text_Completed, MSGBOX_AUTOCLOSE
-	clearflag FLAG_SYS_POKEMON_GET
-	special ToggleGender
+	togglegender
 	warp MAP_OBSTAGOON_RUNAWAY, 0, 61
 	waitstate
 	release
@@ -17,7 +16,6 @@ WoolooPasture_EventScript_Completed:
 
 WoolooPasture_EventScript_Trigger_WoolooPanic::
 	lock
-	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_BADGE01_GET
 	setflag FLAG_BADGE02_GET
 	givemon SPECIES_OBSTAGOON, 15

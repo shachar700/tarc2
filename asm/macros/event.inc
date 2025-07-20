@@ -2639,3 +2639,7 @@
 	callnative ScriptChangeFollowerNPCBattlePartner
 	.2byte \battlePartner
 	.endm
+
+	.macro togglegender
+	callnative ScrCmd_togglegender, requests_effects=1
+	.endm
