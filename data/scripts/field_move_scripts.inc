@@ -281,8 +281,8 @@ Text_CantStrength:
 	.string "may be able to push it aside.$"
 
 Text_StrengthActivated:
-	.string "STRENGTH made it possible to move\n"
-	.string "boulders around.$"
+	.string "Pushing the dog is possible to move\n"
+	.string "the herd around.$"
 
 EventScript_UseWaterfall::
 	lockall

@@ -1,7 +1,7 @@
 {
-  "id": "MAP_WOOLOO_BITTER_END",
-  "name": "WoolooBitterEnd",
-  "layout": "LAYOUT_WOOLOO_BITTER_END",
+  "id": "MAP_WOOLOO_PUSHES",
+  "name": "WoolooPushes",
+  "layout": "LAYOUT_WOOLOO_PUSHES",
   "music": "MUS_RG_ROCKET_HIDEOUT",
   "region_map_section": "MAPSEC_TWO_ISLAND",
   "requires_flash": false,
@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "WoolooBitterEnd_EventScript_Wooloo",
+      "script": "WoolooPushes_EventScript_Wooloo",
       "flag": "0"
     },
     {
@@ -38,7 +38,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooBitterEnd_EventScript_Caught",
+      "script": "WoolooPushes_EventScript_Caught",
       "flag": "0"
     },
     {
@@ -51,11 +51,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "WoolooBitterEnd_EventScript_ZigzagoonBoulder",
+      "script": "WoolooPushes_EventScript_ZigzagoonBoulder",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOUNDOUR)",
       "x": 28,
       "y": 3,
       "elevation": 0,
@@ -64,11 +64,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "WoolooBitterEnd_EventScript_ZigzagoonBoulder",
+      "script": "WoolooPushes_EventScript_ZigzagoonBoulder",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROWLITHE)",
       "x": 21,
       "y": 4,
       "elevation": 0,
@@ -77,7 +77,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "WoolooBitterEnd_EventScript_ZigzagoonBoulder",
+      "script": "WoolooPushes_EventScript_ZigzagoonBoulder",
       "flag": "0"
     },
     {
@@ -90,7 +90,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "WoolooBitterEnd_EventScript_Caught",
+      "script": "WoolooPushes_EventScript_Caught",
       "flag": "0"
     },
     {
@@ -103,7 +103,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "WoolooBitterEnd_EventScript_Caught",
+      "script": "WoolooPushes_EventScript_Caught",
       "flag": "0"
     },
     {
@@ -116,7 +116,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "WoolooBitterEnd_EventScript_ShinyWooloo",
+      "script": "WoolooPushes_EventScript_ShinyWooloo",
       "flag": "0"
     }
   ],
@@ -129,7 +129,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "WoolooBitterEndEventScript_Trigger2"
+      "script": "WoolooPushesEventScript_Trigger2"
     },
     {
       "type": "trigger",
@@ -138,7 +138,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "WoolooBitterEndEventScript_Trigger1"
+      "script": "WoolooPushesEventScript_Trigger1"
     },
     {
       "type": "trigger",
@@ -147,7 +147,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "1",
-      "script": "WoolooBitterEndEventScript_Trigger3b"
+      "script": "WoolooPushesEventScript_Trigger3b"
     },
     {
       "type": "trigger",
@@ -156,7 +156,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "1",
-      "script": "WoolooBitterEndEventScript_Trigger3a"
+      "script": "WoolooPushesEventScript_Trigger3a"
     },
     {
       "type": "trigger",
@@ -165,7 +165,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "2",
-      "script": "WoolooBitterEndEventScript_Trigger4"
+      "script": "WoolooPushesEventScript_Trigger4"
     },
     {
       "type": "trigger",
@@ -174,7 +174,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "2",
-      "script": "WoolooBitterEndEventScript_Trigger5"
+      "script": "WoolooPushesEventScript_Trigger5"
     }
   ],
   "bg_events": []

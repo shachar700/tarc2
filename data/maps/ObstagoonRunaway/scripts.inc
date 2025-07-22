@@ -4,7 +4,7 @@ ObstagoonRunaway_MapScripts::
 ObstagoonRunaway_EventScript_Caught::
 	lock
 	faceplayer
-	playbgm MUS_ENCOUNTER_MALE, FALSE
+	waitse
 	playse SE_PIN
 	waitse
 	playmoncry SPECIES_OBSTAGOON, CRY_MODE_NORMAL
@@ -16,16 +16,17 @@ ObstagoonRunaway_EventScript_Caught::
 	release
 	end
 
-ObstagoonRunaway_EventScript_Zigzagoon::
+ObstagoonRunaway_EventScript_Wooloo::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
 	delay 40
 	waitmoncry
 	msgbox ObstagoonRunaway_Text_Completed, MSGBOX_DEFAULT
 	closemessage
-	warp MAP_WOOLOO_BITTER_END, 2, 7
+	togglegender
+	warp MAP_OBSTAGOON_CHASES, 14, 12
 	waitstate
 	release
 	end

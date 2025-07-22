@@ -49,6 +49,7 @@ WoolooPasture_EventScript_Trigger_WoolooPanic::
 	setobjectmovementtype LOCALID_WOOLOO_RIGHT, MOVEMENT_TYPE_COPY_PLAYER_CLOCKWISE
 	setobjectxy LOCALID_SHINY_WOOLOO, 7, 5
 	setobjectxyperm LOCALID_SHINY_WOOLOO, 7, 5
+	setobjectmovementtype LOCALID_SHINY_WOOLOO, MOVEMENT_TYPE_COPY_PLAYER
 	addvar VAR_WOOLOO_PASTURE_STATE, 1
 	release
 	end
