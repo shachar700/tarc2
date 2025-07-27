@@ -111,9 +111,9 @@ WoolooPushes_EventScript_ShinyWooloo::
 	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
 	delay 40
 	waitmoncry
-	msgbox WoolooPushes_Text_Completed, MSGBOX_DEFAULT
-	closemessage
-	warp MAP_OBSTAGOON_RUNAWAY, 6, 6
+	msgbox WoolooPushes_Text_Completed, MSGBOX_AUTOCLOSE
+	togglegender
+	warp MAP_WOOLOO_PASTURE_2, 1, 11
 	waitstate
 	release
 	end

@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ObstagoonChases/border.bin",
       "blockdata_filepath": "data/layouts/ObstagoonChases/map.bin"
+    },
+    {
+      "id": "LAYOUT_WOOLOO_PASTURE_2",
+      "name": "WoolooPasture_2_Layout",
+      "width": 54,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/WoolooPasture_2/border.bin",
+      "blockdata_filepath": "data/layouts/WoolooPasture_2/map.bin"
     }
   ]
 }

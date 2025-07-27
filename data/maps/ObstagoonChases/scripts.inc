@@ -50,6 +50,8 @@ ObstagoonChases_EventScript_Triggert3a::
 
 ObstagoonChases_EventScript_Triggert3b::
 	lock
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
 	call ObstagoonChases_EventScript_WoolooSurprised
 	applymovement LOCALID_WOOLOO_CHASED, ObstagoonChases_Movement_WoolooOutUp2
 	waitmovement 0

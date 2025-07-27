@@ -94,6 +94,7 @@ WoolooPasture_EventScript_ShinyWooloo::
 	lock
 	faceplayer
 	waitse
+	playse SE_SHINY
 	playmoncry SPECIES_WOOLOO, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
