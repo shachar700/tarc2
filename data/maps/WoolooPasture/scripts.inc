@@ -16,6 +16,7 @@ WoolooPasture_EventScript_Completed:
 	msgbox WoolooPasture_Text_Completed, MSGBOX_AUTOCLOSE
 	togglegender
 	clearflag FLAG_SYS_B_DASH
+	clearflag FLAG_SYS_POKEMON_GET
 	warp MAP_OBSTAGOON_RUNAWAY, 0, 61
 	waitstate
 	release
@@ -26,6 +27,7 @@ WoolooPasture_EventScript_Trigger_WoolooPanic::
 	setflag FLAG_BADGE01_GET
 	setflag FLAG_BADGE02_GET
 	givemon SPECIES_OBSTAGOON, 15
+	setflag FLAG_SYS_POKEMON_GET
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_ge VAR_TEMP_0, 21, WoolooPasture_EventScript_MoveLeft
 	call_if_le VAR_TEMP_0, 20, WoolooPasture_EventScript_MoveDown

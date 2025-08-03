@@ -23,6 +23,18 @@ WoolooPushes_EventScript_ZigzagoonBoulder::
 	goto WoolooPushes_EventScript_DogBoulder
 	end
 
+WoolooPushes_EventScript_GrowlitheBoulder::
+	lock
+	bufferspeciesname STR_VAR_1, SPECIES_GROWLITHE
+	goto WoolooPushes_EventScript_DogBoulder
+	end
+
+WoolooPushes_EventScript_HoundourBoulder::
+	lock
+	bufferspeciesname STR_VAR_1, SPECIES_HOUNDOUR
+	goto WoolooPushes_EventScript_DogBoulder
+	end
+
 WoolooPushes_EventScript_DogBoulder::
 	lockall
 	goto_if_set FLAG_SYS_USE_STRENGTH, WoolooPushes_EventScript_CheckActivatedBoulder
@@ -120,6 +132,7 @@ WoolooPushes_EventScript_ShinyWooloo::
 	waitmoncry
 	msgbox WoolooPushes_Text_Completed, MSGBOX_AUTOCLOSE
 	setflag FLAG_SYS_B_DASH
+	setflag FLAG_SYS_POKEMON_GET
 	togglegender
 	warp MAP_WOOLOO_PASTURE_2, 1, 11
 	waitstate

@@ -47,7 +47,7 @@
 #define FLAG_WOOLOO_PASTURE_WOOLOO_RIGHT/*FLAG_UNUSED_0x021*/    0x21 // Unused Flag
 #define FLAG_WOOLOO_PASTURE_SHINY_WOOLOO/*FLAG_UNUSED_0x022*/    0x22 // Unused Flag
 #define FLAG_OBSTAGON_CHASES_WOOLOO/*FLAG_UNUSED_0x023*/    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_OBSTAGOON_ROCK_CLIMB/*FLAG_UNUSED_0x024*/    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag

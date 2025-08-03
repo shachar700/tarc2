@@ -56,6 +56,8 @@ ObstagoonBlockade_EventScript_Wooloo::
 	waitmoncry
 	msgbox ObstagoonBlockade_Text_Completed, MSGBOX_DEFAULT
 	closemessage
+	setflag FLAG_SYS_B_DASH
+	setflag FLAG_SYS_POKEMON_GET
 	togglegender
 	warp MAP_WOOLOO_SNACK, 11, 5
 	waitstate
