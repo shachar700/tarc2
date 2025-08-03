@@ -57,7 +57,7 @@ ObstagoonBlockade_EventScript_Wooloo::
 	msgbox ObstagoonBlockade_Text_Completed, MSGBOX_DEFAULT
 	closemessage
 	togglegender
-	warp MAP_LITTLEROOT_TOWN, 9, 9
+	warp MAP_WOOLOO_SNACK, 11, 5
 	waitstate
 	release
 	end

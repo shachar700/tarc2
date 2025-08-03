@@ -1169,3 +1169,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/WoolooPasture_2/scripts.inc"
 
 	.include "data/maps/ObstagoonBlockade/scripts.inc"
+
+	.include "data/maps/WoolooSnack/scripts.inc"
+
+	.include "data/maps/ObstagoonFieryPath/scripts.inc"

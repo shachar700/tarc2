@@ -77,6 +77,8 @@ ObstagoonChases_EventScript_Triggert4::
 
 ObstagoonChases_EventScript_Wooloo::
 	lock
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	goto_if_ge VAR_TEMP_0, 16, ObstagoonChases_EventScript_WoolooBattle
 	call ObstagoonChases_EventScript_WoolooSurprised
 	switch VAR_FACING
 	case DIR_WEST, ObstagoonChases_EventScript_PlayerFacesWest
@@ -98,7 +100,7 @@ ObstagoonChases_EventScript_PlayerFacesEast::
 	release
 	end
 
-ObstagoonChases_EventScript_Triggert5::
+ObstagoonChases_EventScript_WoolooBattle::
 	lock
 	call ObstagoonChases_EventScript_WoolooSurprised
 	setwildbattle SPECIES_WOOLOO, 13, ITEM_SITRUS_BERRY

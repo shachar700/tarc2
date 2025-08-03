@@ -21,12 +21,42 @@ WoolooPasture_2_EventScript_Completed:
 	release
 	end
 
+WoolooPasture_2_EventScript_FurfroughCaught::
+	bufferspeciesname STR_VAR_1, SPECIES_FURFROU
+	setvar VAR_0x8006, SPECIES_FURFROU
+	goto WoolooPasture_2_EventScript_Caught
+	end
+
+WoolooPasture_2_EventScript_SnubbullCaught::
+	bufferspeciesname STR_VAR_1, SPECIES_SNUBBULL
+	setvar VAR_0x8006, SPECIES_SNUBBULL
+	goto WoolooPasture_2_EventScript_Caught
+	end
+
+WoolooPasture_2_EventScript_SmeargleCaught::
+	bufferspeciesname STR_VAR_1, SPECIES_SMEARGLE
+	setvar VAR_0x8006, SPECIES_SMEARGLE
+	goto WoolooPasture_2_EventScript_Caught
+	end
+
+WoolooPasture_2_EventScript_ZigzagoonCaught::
+	bufferspeciesname STR_VAR_1, SPECIES_SMEARGLE
+	setvar VAR_0x8006, SPECIES_SMEARGLE
+	goto WoolooPasture_2_EventScript_Caught
+	end
+
+WoolooPasture_2_EventScript_ArcanineCaught::
+	bufferspeciesname STR_VAR_1, SPECIES_ARCANINE
+	setvar VAR_0x8006, SPECIES_ARCANINE
+	goto WoolooPasture_2_EventScript_Caught
+	end
+
 WoolooPasture_2_EventScript_Caught::
 	lock
 	faceplayer
 	playse SE_PIN
 	waitse
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	playmoncry VAR_0x8006, CRY_MODE_NORMAL
 	msgbox WoolooPasture_2_Text_ZigzagoonCatchesYou, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
@@ -296,7 +326,7 @@ Wooloopasture_2_Movement_GoToCornerWooloo2:
 	step_end
 
 WoolooPasture_2_Text_ZigzagoonCatchesYou:
-	.string "ZIGZAGOON: Stay away!$"
+	.string "{STR_VAR_1}: Stay away!$"
 
 WoolooPasture_2_Text_Completed:
 	.string "{FONT_SMALL}Stage 5 completed.$"

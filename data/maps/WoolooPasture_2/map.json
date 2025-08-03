@@ -29,7 +29,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FURFROU)",
       "x": 11,
       "y": 12,
       "elevation": 0,
@@ -38,11 +38,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooPasture_2_EventScript_Caught",
+      "script": "WoolooPasture_2_EventScript_FurfroughCaught",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNUBBULL)",
       "x": 18,
       "y": 13,
       "elevation": 0,
@@ -51,7 +51,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooPasture_2_EventScript_Caught",
+      "script": "WoolooPasture_2_EventScript_SnubbullCaught",
       "flag": "0"
     },
     {
@@ -64,7 +64,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooPasture_2_EventScript_Caught",
+      "script": "WoolooPasture_2_EventScript_ZigzagoonCaught",
       "flag": "0"
     },
     {
@@ -77,7 +77,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooPasture_2_EventScript_Caught",
+      "script": "WoolooPasture_2_EventScript_ZigzagoonCaught",
       "flag": "0"
     },
     {
@@ -90,7 +90,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooPasture_2_EventScript_Caught",
+      "script": "WoolooPasture_2_EventScript_ZigzagoonCaught",
       "flag": "0"
     },
     {
@@ -122,7 +122,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SMEARGLE)",
       "x": 41,
       "y": 10,
       "elevation": 0,
@@ -131,11 +131,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooPasture_2_EventScript_Caught",
+      "script": "WoolooPasture_2_EventScript_SmeargleCaught",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SMEARGLE)",
       "x": 43,
       "y": 8,
       "elevation": 0,
@@ -144,11 +144,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooPasture_2_EventScript_Caught",
+      "script": "WoolooPasture_2_EventScript_SmeargleCaught",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARCANINE)",
       "x": 48,
       "y": 7,
       "elevation": 0,
@@ -157,7 +157,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "WoolooPasture_2_EventScript_Caught",
+      "script": "WoolooPasture_2_EventScript_ArcanineCaught",
       "flag": "0"
     }
   ],
@@ -290,5 +290,22 @@
       "script": "WoolooPasture_2_EventScript_Trigger_4b"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 43,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
+  ]
 }

@@ -16,7 +16,14 @@ WoolooPushes_EventScript_Caught::
 	release
 	end
 
+
 WoolooPushes_EventScript_ZigzagoonBoulder::
+	lock
+	bufferspeciesname STR_VAR_1, SPECIES_ZIGZAGOON
+	goto WoolooPushes_EventScript_DogBoulder
+	end
+
+WoolooPushes_EventScript_DogBoulder::
 	lockall
 	goto_if_set FLAG_SYS_USE_STRENGTH, WoolooPushes_EventScript_CheckActivatedBoulder
 	setfieldeffectargument 1, VAR_RESULT
@@ -230,18 +237,18 @@ WoolooPushes_Text_Wooloo:
 	.string "WOOLOO: Wooloo?$"
 
 WoolooPushes_Text_WantToUseZigzagoon:
-	.string "It's a ZIGZAGOON, a POKéMON\n"
+	.string "It's a {STR_VAR_1}, a POKéMON\n"
 	.string "that can protect the herd.\p"
 	.string "Would you like to use its help?$"
 
 WoolooPushes_Text_MonUsedStrength:
-	.string "WOOLOO called for ZIGZAGOON!\p"
-	.string "ZIGZAGOON's PROTECTION made it\n"
+	.string "WOOLOO called for {STR_VAR_1}!\p"
+	.string "{STR_VAR_1}'s PROTECTION made it\n"
 	.string "possible to move the herd around!$"
 
 WoolooPushes_Text_StrengthActivated:
-	.string "The dogs make it possible to move\n"
-	.string "the herd around.$"
+	.string "The dogs' protection make it possible to\n"
+	.string "move the herd around.$"
 
 WoolooPushes_Text_Completed:
 	.string "{FONT_SMALL}Stage 4 completed.$"

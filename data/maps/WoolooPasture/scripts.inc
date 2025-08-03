@@ -51,8 +51,8 @@ WoolooPasture_EventScript_Trigger_WoolooPanic::
 	setobjectxy LOCALID_WOOLOO_RIGHT, 39, 17
 	setobjectxyperm LOCALID_WOOLOO_RIGHT, 39, 17
 	setobjectmovementtype LOCALID_WOOLOO_RIGHT, MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE
-	setobjectxy LOCALID_WOOLOO_LEFT, 4, 14
-	setobjectxyperm LOCALID_WOOLOO_LEFT, 4, 14
+	setobjectxy LOCALID_WOOLOO_LEFT, 1, 12
+	setobjectxyperm LOCALID_WOOLOO_LEFT, 1, 12
 	setobjectmovementtype LOCALID_WOOLOO_RIGHT, MOVEMENT_TYPE_COPY_PLAYER_CLOCKWISE
 	setobjectxy LOCALID_SHINY_WOOLOO, 8, 6
 	setobjectxyperm LOCALID_SHINY_WOOLOO, 8, 6

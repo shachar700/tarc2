@@ -4470,6 +4470,26 @@
       "secondary_tileset": "gTileset_SootopolisGym",
       "border_filepath": "data/layouts/ObstagoonBlockade/border.bin",
       "blockdata_filepath": "data/layouts/ObstagoonBlockade/map.bin"
+    },
+    {
+      "id": "LAYOUT_WOOLOO_SNACK",
+      "name": "WoolooSnack_Layout",
+      "width": 30,
+      "height": 76,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/WoolooSnack/border.bin",
+      "blockdata_filepath": "data/layouts/WoolooSnack/map.bin"
+    },
+    {
+      "id": "LAYOUT_OBSTAGOON_FIERY_PATH",
+      "name": "ObstagoonFieryPath_Layout",
+      "width": 35,
+      "height": 38,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/ObstagoonFieryPath/border.bin",
+      "blockdata_filepath": "data/layouts/ObstagoonFieryPath/map.bin"
     }
   ]
 }

@@ -61,6 +61,7 @@
 #include "constants/map_types.h"
 
 #include "main_menu.h"
+#include "save.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -3249,12 +3250,17 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
 
 bool8 ScrCmd_togglegender(struct ScriptContext *ctx)
 {
+    // Toggle gender
     if (gSaveBlock2Ptr->playerGender == MALE)
         gSaveBlock2Ptr->playerGender = FEMALE;
     else
         gSaveBlock2Ptr->playerGender = MALE;
+
+    // Update avatar gender
+    gPlayerAvatar.gender = gSaveBlock2Ptr->playerGender;
+
+    // Optional: update default name (if needed)
     NewGameBirchSpeech_SetDefaultPlayerName(0);
-    ScriptContext_Enable();
 
     return FALSE; // continue script immediately
 }

@@ -75,24 +75,6 @@
       "var": "VAR_TEMP_0",
       "var_value": "3",
       "script": "ObstagoonChases_EventScript_Triggert4"
-    },
-    {
-      "type": "trigger",
-      "x": 16,
-      "y": 12,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "4",
-      "script": "ObstagoonChases_EventScript_Triggert5"
-    },
-    {
-      "type": "trigger",
-      "x": 16,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "4",
-      "script": "ObstagoonChases_EventScript_Triggert5"
     }
   ],
   "bg_events": []
