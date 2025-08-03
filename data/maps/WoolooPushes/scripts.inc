@@ -112,6 +112,7 @@ WoolooPushes_EventScript_ShinyWooloo::
 	delay 40
 	waitmoncry
 	msgbox WoolooPushes_Text_Completed, MSGBOX_AUTOCLOSE
+	setflag FLAG_SYS_B_DASH
 	togglegender
 	warp MAP_WOOLOO_PASTURE_2, 1, 11
 	waitstate
@@ -235,11 +236,11 @@ WoolooPushes_Text_WantToUseZigzagoon:
 
 WoolooPushes_Text_MonUsedStrength:
 	.string "WOOLOO called for ZIGZAGOON!\p"
-	.string "ZIGZAGOON's STRENGTH made it\n"
+	.string "ZIGZAGOON's PROTECTION made it\n"
 	.string "possible to move the herd around!$"
 
 WoolooPushes_Text_StrengthActivated:
-	.string "The dogs made it possible to move\n"
+	.string "The dogs make it possible to move\n"
 	.string "the herd around.$"
 
 WoolooPushes_Text_Completed:

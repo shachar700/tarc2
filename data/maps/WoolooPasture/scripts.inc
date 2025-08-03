@@ -1,6 +1,12 @@
 WoolooPasture_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, WoolooPasture_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, WoolooPasture_OnFrame
 	.byte 0
+
+WoolooPasture_OnTransition:
+	setflag FLAG_SYS_B_DASH
+	end
+
 
 WoolooPasture_OnFrame:
 	map_script_2 VAR_WOOLOO_PASTURE_STATE, 4, WoolooPasture_EventScript_Completed
@@ -9,6 +15,7 @@ WoolooPasture_OnFrame:
 WoolooPasture_EventScript_Completed:
 	msgbox WoolooPasture_Text_Completed, MSGBOX_AUTOCLOSE
 	togglegender
+	clearflag FLAG_SYS_B_DASH
 	warp MAP_OBSTAGOON_RUNAWAY, 0, 61
 	waitstate
 	release
@@ -41,14 +48,14 @@ WoolooPasture_EventScript_Trigger_WoolooPanic::
 	applymovement LOCALID_WOOLOO_RIGHT, WoolooPasture_Movement_WoolooRightOut
 	applymovement LOCALID_SHINY_WOOLOO, WoolooPasture_Movement_ShinyWoolooOut
 	waitmovement 0
-	setobjectxy LOCALID_WOOLOO_RIGHT, 28, 17
-	setobjectxyperm LOCALID_WOOLOO_RIGHT, 28, 17
+	setobjectxy LOCALID_WOOLOO_RIGHT, 39, 17
+	setobjectxyperm LOCALID_WOOLOO_RIGHT, 39, 17
 	setobjectmovementtype LOCALID_WOOLOO_RIGHT, MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE
-	setobjectxy LOCALID_WOOLOO_LEFT, 0, 9
-	setobjectxyperm LOCALID_WOOLOO_LEFT, 0, 9
+	setobjectxy LOCALID_WOOLOO_LEFT, 4, 14
+	setobjectxyperm LOCALID_WOOLOO_LEFT, 4, 14
 	setobjectmovementtype LOCALID_WOOLOO_RIGHT, MOVEMENT_TYPE_COPY_PLAYER_CLOCKWISE
-	setobjectxy LOCALID_SHINY_WOOLOO, 7, 5
-	setobjectxyperm LOCALID_SHINY_WOOLOO, 7, 5
+	setobjectxy LOCALID_SHINY_WOOLOO, 8, 6
+	setobjectxyperm LOCALID_SHINY_WOOLOO, 8, 6
 	setobjectmovementtype LOCALID_SHINY_WOOLOO, MOVEMENT_TYPE_COPY_PLAYER
 	addvar VAR_WOOLOO_PASTURE_STATE, 1
 	release

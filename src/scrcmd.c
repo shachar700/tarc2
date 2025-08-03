@@ -60,6 +60,8 @@
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
 
+#include "main_menu.h"
+
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
 
@@ -3251,6 +3253,8 @@ bool8 ScrCmd_togglegender(struct ScriptContext *ctx)
         gSaveBlock2Ptr->playerGender = FEMALE;
     else
         gSaveBlock2Ptr->playerGender = MALE;
+    NewGameBirchSpeech_SetDefaultPlayerName(0);
+    ScriptContext_Enable();
 
     return FALSE; // continue script immediately
 }

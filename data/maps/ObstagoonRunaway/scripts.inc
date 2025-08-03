@@ -25,6 +25,7 @@ ObstagoonRunaway_EventScript_Wooloo::
 	waitmoncry
 	msgbox ObstagoonRunaway_Text_Completed, MSGBOX_DEFAULT
 	closemessage
+	setflag FLAG_SYS_B_DASH
 	togglegender
 	warp MAP_OBSTAGOON_CHASES, 14, 12
 	waitstate

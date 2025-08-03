@@ -175,6 +175,15 @@
       "var": "VAR_TEMP_0",
       "var_value": "2",
       "script": "WoolooPushesEventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "WoolooPushesEventScript_Trigger2"
     }
   ],
   "bg_events": []

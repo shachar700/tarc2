@@ -12,7 +12,9 @@ WoolooPasture_2_OnFrame:
 	.2byte 0
 
 WoolooPasture_2_EventScript_Completed:
+	lock
 	msgbox WoolooPasture_2_Text_Completed, MSGBOX_AUTOCLOSE
+	clearflag FLAG_SYS_B_DASH
 	togglegender
 	warp MAP_OBSTAGOON_BLOCKADE, 3, 3
 	waitstate

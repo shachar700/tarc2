@@ -110,6 +110,7 @@ ObstagoonChases_EventScript_Triggert5::
 	fadescreen FADE_FROM_BLACK
 	special HealPlayerParty
 	msgbox ObstagoonChases_Text_Completed, MSGBOX_AUTOCLOSE
+	clearflag FLAG_SYS_B_DASH
 	togglegender
 	warp MAP_WOOLOO_PUSHES, 2, 7
 	waitstate
