@@ -5,6 +5,7 @@ WoolooPasture_MapScripts::
 
 WoolooPasture_OnTransition:
 	setflag FLAG_SYS_B_DASH
+	setrespawn HEAL_LOCATION_TWO_START
 	end
 
 

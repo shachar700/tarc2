@@ -43,6 +43,7 @@ ObstagoonBlockade_EventScript_FallThroughIce::
 	waitmovement 0
 	playse SE_FALL
 	delay 60
+	addvar VAR_TWO_RESPAWN_COUNTER, 1
 	warpsilent MAP_OBSTAGOON_BLOCKADE, 3, 3
 	waitstate
 	end

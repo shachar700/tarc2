@@ -18,7 +18,9 @@ static void StartStrengthFieldEffect(void);
 bool8 SetUpFieldMove_Strength(void)
 {
     if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_PUSHABLE_BOULDER) == TRUE ||
-    CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)) == TRUE)
+    CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)) == TRUE ||
+    CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_SPECIES(ROCKRUFF)) == TRUE ||
+    CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_SPECIES_SHINY(ROCKRUFF)) == TRUE)
     {
         gSpecialVar_Result = GetCursorSelectionMonId();
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;

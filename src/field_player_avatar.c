@@ -969,7 +969,17 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
         if (objectEventId != OBJECT_EVENTS_COUNT && (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER ||
         gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(ZIGZAGOON) ||
         gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(GROWLITHE) ||
-        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(HOUNDOUR)))
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(HOUNDOUR) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(ROCKRUFF) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES_SHINY(ROCKRUFF) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(LILLIPUP) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(YAMPER) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(MANECTRIC) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(ELECTRIKE) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(GROWLITHE_HISUI) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(HOUNDOOM) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(HERDIER) ||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(FENNEKIN)))
         {
             x = gObjectEvents[objectEventId].currentCoords.x;
             y = gObjectEvents[objectEventId].currentCoords.y;

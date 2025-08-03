@@ -1,11 +1,16 @@
 ObstagoonChases_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ObstagoonChases_OnTransition
 	.byte 0
+
+ObstagoonChases_OnTransition:
+	copyvar VAR_LAST_TALKED, LOCALID_WOOLOO_CHASED
+	end
 
 ObstagoonChases_EventScript_WoolooSurprised::
 	playse SE_PIN
-	applymovement LOCALID_WOOLOO_CHASED, Common_Movement_ExclamationMark
+	applymovement VAR_LAST_TALKED, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_WOOLOO_CHASED, Common_Movement_FacePlayer
+	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
 	waitmovement 0
 	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
 	delay 40
@@ -107,9 +112,9 @@ ObstagoonChases_EventScript_WoolooBattle::
 	dowildbattle
 	playmoncry SPECIES_WOOLOO, CRY_MODE_FAINT
 	waitmoncry
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_WOOLOO_CHASED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	special HealPlayerParty
 	msgbox ObstagoonChases_Text_Completed, MSGBOX_AUTOCLOSE
 	clearflag FLAG_SYS_B_DASH

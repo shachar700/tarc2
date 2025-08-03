@@ -131,6 +131,12 @@
       "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
       "x": 3,
       "y": 52
+    },
+    {
+      "id": "HEAL_LOCATION_TWO_START",
+      "map": "MAP_WOOLOO_PASTURE",
+      "x": 38,
+      "y": 3
     }
   ]
 }

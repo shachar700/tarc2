@@ -11,11 +11,11 @@ WoolooPushes_EventScript_Caught::
 	msgbox ObstagoonRunaway_Text_Obstagoon, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
+	addvar VAR_TWO_RESPAWN_COUNTER, 1
 	warp MAP_WOOLOO_PUSHES, 2, 7
 	waitstate
 	release
 	end
-
 
 WoolooPushes_EventScript_ZigzagoonBoulder::
 	lock
