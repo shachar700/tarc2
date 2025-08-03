@@ -243,4 +243,4 @@ WoolooPushes_Text_StrengthActivated:
 	.string "the herd around.$"
 
 WoolooPushes_Text_Completed:
-	.string "Stage 4 completed.$"
+	.string "{FONT_SMALL}Stage 4 completed.$"

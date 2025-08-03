@@ -152,5 +152,5 @@ WoolooPasture_EventScript_RightWooloo::
 	end
 
 WoolooPasture_Text_Completed:
-	.string "Stage 1 completed.$"
+	.string "{FONT_SMALL}Stage 1 completed.$"
 

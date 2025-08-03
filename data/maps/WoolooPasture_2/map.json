@@ -2,7 +2,7 @@
   "id": "MAP_WOOLOO_PASTURE_2",
   "name": "WoolooPasture_2",
   "layout": "LAYOUT_WOOLOO_PASTURE_2",
-  "music": "MUS_RG_TRAINER_TOWER",
+  "music": "MUS_ROUTE113",
   "region_map_section": "MAPSEC_TWO_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

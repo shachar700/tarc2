@@ -35,4 +35,4 @@ ObstagoonRunaway_Text_Obstagoon:
 	.string "OBSTAGOON: Dinner!$"
 
 ObstagoonRunaway_Text_Completed:
-	.string "Stage 2 completed.$"
+	.string "{FONT_SMALL}Stage 2 completed.$"

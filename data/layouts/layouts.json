@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/WoolooPasture_2/border.bin",
       "blockdata_filepath": "data/layouts/WoolooPasture_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_OBSTAGOON_BLOCKADE",
+      "name": "ObstagoonBlockade_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SootopolisGym",
+      "border_filepath": "data/layouts/ObstagoonBlockade/border.bin",
+      "blockdata_filepath": "data/layouts/ObstagoonBlockade/map.bin"
     }
   ]
 }

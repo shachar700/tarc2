@@ -14,7 +14,7 @@ WoolooPasture_2_OnFrame:
 WoolooPasture_2_EventScript_Completed:
 	msgbox WoolooPasture_2_Text_Completed, MSGBOX_AUTOCLOSE
 	togglegender
-	warp MAP_LITTLEROOT_TOWN, 9, 9
+	warp MAP_OBSTAGOON_BLOCKADE, 3, 3
 	waitstate
 	release
 	end
@@ -28,7 +28,7 @@ WoolooPasture_2_EventScript_Caught::
 	msgbox WoolooPasture_2_Text_ZigzagoonCatchesYou, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setvar VAR_WOOLOO_PASTURE_STATE, 0
+	setvar VAR_WOOLOO_PASTURE_2_STATE, 0
 	warp MAP_WOOLOO_PASTURE_2, 1, 11
 	waitstate
 	release
@@ -294,7 +294,7 @@ Wooloopasture_2_Movement_GoToCornerWooloo2:
 	step_end
 
 WoolooPasture_2_Text_ZigzagoonCatchesYou:
-	.string "ZIGZAGOON: Zig zig!$"
+	.string "ZIGZAGOON: Stay away!$"
 
 WoolooPasture_2_Text_Completed:
-	.string "Stage 5 completed.$"
+	.string "{FONT_SMALL}Stage 5 completed.$"

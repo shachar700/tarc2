@@ -196,5 +196,5 @@ ObstagoonChases_Movement_WoolooOut3:
 	step_end
 
 ObstagoonChases_Text_Completed:
-	.string "Stage 3 completed.$"
+	.string "{FONT_SMALL}Stage 3 completed.$"
 
