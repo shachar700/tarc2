@@ -24,26 +24,17 @@ ObstagoonFieryPath_EventScript_Caught::
 
 ObstagoonFieryPath_EventScript_PickedPokeToy::
 	lock
+	removeobject 7
 	playfanfare MUS_OBTAIN_ITEM
 	message ObstagoonFieryPath_Text_PickedPokeToy
 	waitfanfare
 	setflag FLAG_TEMP_1
-	removeobject 7
 	call ObstagoonFieryPath_EventScript_LetTheDogsOut
 	release
 	end
 
 ObstagoonFieryPath_EventScript_LetTheDogsOut::
-	setobjectmovementtype 1, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectmovementtype 2, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectmovementtype 3, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectmovementtype 4, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectmovementtype 5, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectmovementtype 6, MOVEMENT_TYPE_WANDER_AROUND
 	setobjectmovementtype 8, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
-	setobjectmovementtype 9, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectmovementtype 12, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectmovementtype 13, MOVEMENT_TYPE_WANDER_AROUND
 	return
 
 ObstagoonFieryPath_EventScript_Wooloo::
@@ -64,8 +55,8 @@ ObstagoonFieryPath_EventScript_Wooloo::
 	end
 
 ObstagoonFieryPath_Text_PickedPokeToy:
-	.string "Wooloo picked the up POKé TOY!\p"
-	.string "All dogs became loose.$"
+	.string "Wooloo picked up the POKé TOY!\p"
+	.string "It made Hisui Growlithe excited.$"
 
 ObstagoonFieryPath_Text_Completed:
 	.string "{FONT_SMALL}Stage 8 completed.$"
