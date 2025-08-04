@@ -1,10 +1,16 @@
 ObstagoonChases_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, ObstagoonChases_OnTransition
 	.byte 0
 
-ObstagoonChases_OnTransition:
-	copyvar VAR_LAST_TALKED, LOCALID_WOOLOO_CHASED
-	end
+ObstagoonChases_EventScript_WoolooSurprisedChased::
+	playse SE_PIN
+	applymovement LOCALID_WOOLOO_CHASED, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_WOOLOO_CHASED, Common_Movement_FacePlayer
+	waitmovement 0
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
+	delay 40
+	waitmoncry
+	return
 
 ObstagoonChases_EventScript_WoolooSurprised::
 	playse SE_PIN
@@ -17,9 +23,9 @@ ObstagoonChases_EventScript_WoolooSurprised::
 	waitmoncry
 	return
 
-ObstagoonChases_EventScript_Triggert1::
+ObstagoonChases_EventScript_Triggerd1::
 	lock
-	call ObstagoonChases_EventScript_WoolooSurprised
+	call ObstagoonChases_EventScript_WoolooSurprisedChased
 	applymovement LOCALID_WOOLOO_CHASED, ObstagoonChases_Movement_WoolooOut
 	waitmovement 0
 	setobjectxy LOCALID_WOOLOO_CHASED, 4, 2
@@ -28,9 +34,9 @@ ObstagoonChases_EventScript_Triggert1::
 	release
 	end
 
-ObstagoonChases_EventScript_Triggert2::
+ObstagoonChases_EventScript_Triggerd2::
 	lock
-	call ObstagoonChases_EventScript_WoolooSurprised
+	call ObstagoonChases_EventScript_WoolooSurprisedChased
 	applymovement LOCALID_WOOLOO_CHASED, ObstagoonChases_Movement_WoolooOut2
 	waitmovement 0
 	playse SE_LEDGE
@@ -42,9 +48,9 @@ ObstagoonChases_EventScript_Triggert2::
 	release
 	end
 
-ObstagoonChases_EventScript_Triggert3a::
+ObstagoonChases_EventScript_Triggerd3a::
 	lock
-	call ObstagoonChases_EventScript_WoolooSurprised
+	call ObstagoonChases_EventScript_WoolooSurprisedChased
 	applymovement LOCALID_WOOLOO_CHASED, ObstagoonChases_Movement_WoolooOutUp
 	waitmovement 0
 	setobjectxy LOCALID_WOOLOO_CHASED, 13, 3
@@ -53,11 +59,11 @@ ObstagoonChases_EventScript_Triggert3a::
 	release
 	end
 
-ObstagoonChases_EventScript_Triggert3b::
+ObstagoonChases_EventScript_Triggerd3b::
 	lock
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
-	call ObstagoonChases_EventScript_WoolooSurprised
+	call ObstagoonChases_EventScript_WoolooSurprisedChased
 	applymovement LOCALID_WOOLOO_CHASED, ObstagoonChases_Movement_WoolooOutUp2
 	waitmovement 0
 	setobjectxy LOCALID_WOOLOO_CHASED, 13, 3
@@ -66,9 +72,9 @@ ObstagoonChases_EventScript_Triggert3b::
 	release
 	end
 
-ObstagoonChases_EventScript_Triggert4::
+ObstagoonChases_EventScript_Triggerd4::
 	lock
-	call ObstagoonChases_EventScript_WoolooSurprised
+	call ObstagoonChases_EventScript_WoolooSurprisedChased
 	applymovement LOCALID_WOOLOO_CHASED, ObstagoonChases_Movement_WoolooOut3
 	waitmovement 0
 	playse SE_LEDGE

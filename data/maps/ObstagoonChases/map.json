@@ -38,7 +38,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "ObstagoonChases_EventScript_Triggert1"
+      "script": "ObstagoonChases_EventScript_Triggerd1"
     },
     {
       "type": "trigger",
@@ -47,7 +47,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "1",
-      "script": "ObstagoonChases_EventScript_Triggert2"
+      "script": "ObstagoonChases_EventScript_Triggerd2"
     },
     {
       "type": "trigger",
@@ -56,7 +56,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "2",
-      "script": "ObstagoonChases_EventScript_Triggert3a"
+      "script": "ObstagoonChases_EventScript_Triggerd3a"
     },
     {
       "type": "trigger",
@@ -65,7 +65,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "2",
-      "script": "ObstagoonChases_EventScript_Triggert3b"
+      "script": "ObstagoonChases_EventScript_Triggerd3b"
     },
     {
       "type": "trigger",
@@ -74,7 +74,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "3",
-      "script": "ObstagoonChases_EventScript_Triggert4"
+      "script": "ObstagoonChases_EventScript_Triggerd4"
     }
   ],
   "bg_events": []
