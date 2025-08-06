@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_WOOLOO_LEFT",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
-      "x": 23,
-      "y": 10,
+      "x": 33,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 5,
@@ -31,8 +31,8 @@
     {
       "local_id": "LOCALID_SHINY_WOOLOO",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES_SHINY(WOOLOO)",
-      "x": 24,
-      "y": 9,
+      "x": 34,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 5,
@@ -45,8 +45,8 @@
     {
       "local_id": "LOCALID_WOOLOO_RIGHT",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
-      "x": 25,
-      "y": 10,
+      "x": 35,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 5,
@@ -61,8 +61,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 29,
-      "y": 7,
+      "x": 39,
+      "y": 9,
       "elevation": 0,
       "var": "VAR_WOOLOO_PASTURE_STATE",
       "var_value": "0",
@@ -70,8 +70,8 @@
     },
     {
       "type": "trigger",
-      "x": 28,
-      "y": 6,
+      "x": 38,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_WOOLOO_PASTURE_STATE",
       "var_value": "0",

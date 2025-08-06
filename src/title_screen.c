@@ -411,7 +411,7 @@ static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite)
     if (sprite->sAnimate == TRUE)
     {
         // Alternate between hidden and shown every 16th frame
-        if (++sprite->sTimer & 16)
+        if (++sprite->sTimer & 32)
             sprite->invisible = FALSE;
         else
             sprite->invisible = TRUE;
@@ -441,7 +441,7 @@ static void CreateCopyrightBanner(s16 x, s16 y)
     u8 i;
     u8 spriteId;
 
-    x -= 32;
+    x -= 42;
     for (i = 0; i < NUM_COPYRIGHT_FRAMES; i++, x += 32)
     {
         spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x, y, 0);
@@ -658,7 +658,7 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-        m4aSongNumStart(MUS_TITLE);
+        m4aSongNumStart(MUS_B_PYRAMID);
         gMain.state = 5;
         break;
     case 5:

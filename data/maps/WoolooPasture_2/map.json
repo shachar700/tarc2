@@ -130,7 +130,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "7",
       "script": "WoolooPasture_2_EventScript_SmeargleCaught",
       "flag": "0"
     },
@@ -143,7 +143,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "7",
       "script": "WoolooPasture_2_EventScript_SmeargleCaught",
       "flag": "0"
     },

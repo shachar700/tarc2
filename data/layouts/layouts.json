@@ -4414,7 +4414,7 @@
     {
       "id": "LAYOUT_WOOLOO_PASTURE",
       "name": "WoolooPasture_Layout",
-      "width": 40,
+      "width": 60,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",

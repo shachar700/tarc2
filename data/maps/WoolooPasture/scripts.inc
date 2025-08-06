@@ -51,15 +51,15 @@ WoolooPasture_EventScript_Trigger_WoolooPanic::
 	applymovement LOCALID_WOOLOO_RIGHT, WoolooPasture_Movement_WoolooRightOut
 	applymovement LOCALID_SHINY_WOOLOO, WoolooPasture_Movement_ShinyWoolooOut
 	waitmovement 0
-	setobjectxy LOCALID_WOOLOO_RIGHT, 39, 17
-	setobjectxyperm LOCALID_WOOLOO_RIGHT, 39, 17
+	setobjectxy LOCALID_WOOLOO_RIGHT, 56, 17
+	setobjectxyperm LOCALID_WOOLOO_RIGHT, 56, 17
 	setobjectmovementtype LOCALID_WOOLOO_RIGHT, MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE
 	setobjectxy LOCALID_WOOLOO_LEFT, 1, 12
 	setobjectxyperm LOCALID_WOOLOO_LEFT, 1, 12
-	setobjectmovementtype LOCALID_WOOLOO_RIGHT, MOVEMENT_TYPE_COPY_PLAYER_CLOCKWISE
+	setobjectmovementtype LOCALID_WOOLOO_LEFT, MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE
 	setobjectxy LOCALID_SHINY_WOOLOO, 8, 6
 	setobjectxyperm LOCALID_SHINY_WOOLOO, 8, 6
-	setobjectmovementtype LOCALID_SHINY_WOOLOO, MOVEMENT_TYPE_COPY_PLAYER
+	setobjectmovementtype LOCALID_SHINY_WOOLOO, MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE
 	addvar VAR_WOOLOO_PASTURE_STATE, 1
 	release
 	end

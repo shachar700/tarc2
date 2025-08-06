@@ -46,13 +46,14 @@ ObstagoonFieryPath_EventScript_Wooloo::
 	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
 	delay 40
 	waitmoncry
+	buffernumberstring STR_VAR_1, VAR_TWO_RESPAWN_COUNTER
 	msgbox ObstagoonFieryPath_Text_Completed, MSGBOX_DEFAULT
 	closemessage
-	setflag FLAG_SYS_B_DASH
-	setflag FLAG_SYS_POKEMON_GET
-	togglegender
-	warp MAP_ROUTE101, 9, 9
-	waitstate
+	@setflag FLAG_SYS_B_DASH
+	@setflag FLAG_SYS_POKEMON_GET
+	@togglegender
+	@warp MAP_ROUTE101, 9, 9
+	@waitstate
 	release
 	end
 
@@ -61,4 +62,5 @@ ObstagoonFieryPath_Text_PickedPokeToy:
 	.string "It made Hisui Growlithe excited.$"
 
 ObstagoonFieryPath_Text_Completed:
-	.string "{FONT_SMALL}Stage 8 completed.$"
+	.string "{FONT_SMALL}Stage 8 completed.\n"
+	.string "Total Respawn Counter: {STR_VAR_1}$"

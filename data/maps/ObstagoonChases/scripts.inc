@@ -2,6 +2,7 @@ ObstagoonChases_MapScripts::
 	.byte 0
 
 ObstagoonChases_EventScript_WoolooSurprisedChased::
+	waitse
 	playse SE_PIN
 	applymovement LOCALID_WOOLOO_CHASED, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -13,6 +14,7 @@ ObstagoonChases_EventScript_WoolooSurprisedChased::
 	return
 
 ObstagoonChases_EventScript_WoolooSurprised::
+	waitse
 	playse SE_PIN
 	applymovement VAR_LAST_TALKED, Common_Movement_ExclamationMark
 	waitmovement 0
