@@ -26,8 +26,10 @@ ObstagoonFieryPath_EventScript_PickedPokeToy::
 	lock
 	removeobject 7
 	playfanfare MUS_OBTAIN_ITEM
-	message ObstagoonFieryPath_Text_PickedPokeToy
+	msgbox ObstagoonFieryPath_Text_PickedPokeToy, MSGBOX_DEFAULT
 	waitfanfare
+	waitmessage
+	closemessage
 	setflag FLAG_TEMP_1
 	call ObstagoonFieryPath_EventScript_LetTheDogsOut
 	release
