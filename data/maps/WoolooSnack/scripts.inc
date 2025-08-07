@@ -43,6 +43,8 @@ WoolooSnack_EventScript_RockClimbUp::
 	msgbox WoolooSnack_Text_RockClimbUp, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, WoolooSnack_EventScript_RockClimbDeclined
 	closemessage
+	waitse
+	playse SE_LEDGE
 	applymovement LOCALID_PLAYER, WoolooSnack_Movement_GoUp
 	waitmovement 0
 	release
@@ -52,6 +54,8 @@ WoolooSnack_EventScript_RockClimbDown::
 	msgbox WoolooSnack_Text_RockClimbDown, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, WoolooSnack_EventScript_RockClimbDeclined
 	closemessage
+	waitse 
+	playse SE_LEDGE
 	applymovement LOCALID_PLAYER, WoolooSnack_Movement_GoDown
 	waitmovement 0
 	release
@@ -272,6 +276,8 @@ WoolooSnack_EventScript_2ndWoolooLoop_GoBackUp::
 WoolooSnack_EventScript_2ndWoolooFacesWest::
 	applymovement LOCALID_2ND_WOOLOO, WoolooSnack_Movement_2ndWoolooApproachesLeftLedge
 	waitmovement 0
+	waitse
+	playse SE_LEDGE
 	applymovement LOCALID_2ND_WOOLOO, WoolooSnack_Movement_GoDown
 	waitmovement 0
 	applymovement LOCALID_2ND_WOOLOO, WoolooSnack_Movement_2ndWoolooParksLeftSide
@@ -287,6 +293,8 @@ WoolooSnack_EventScript_2ndWoolooEscapes::
 	case DIR_NORTH, WoolooSnack_EventScript_2ndWoolooFacesNorth
 	applymovement LOCALID_2ND_WOOLOO, Common_Movement_WalkDownFast
 	waitmovement 0
+	waitse
+	playse SE_LEDGE
 	applymovement LOCALID_2ND_WOOLOO, WoolooSnack_Movement_GoDown
 	waitmovement 0
 	applymovement LOCALID_2ND_WOOLOO, WoolooSnack_Movement_2ndWoolooReach1stStop2

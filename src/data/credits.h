@@ -1,6 +1,24 @@
 enum
 {
-    PAGE_TITLE,
+    PAGE_TITLE_HACK, // Valiant, Credits
+    PAGE_CREATOR, // Creator, Shahar
+    PAGE_PROGRAMMING, // Programming, Shahar
+    PAGE_MAPPING, // Mapping, Shahar
+    PAGE_SCRIPTING, // Scripting, Shahar
+    PAGE_ART, // Art, Shahar
+    PAGE_BASE, // Base, Gamefreak, Creatures Inc, Nintendo
+    PAGE_DECOMP, // Decomp, Pret, RH Hideout
+    PAGE_TOOLS, // Tools, Visual Studio Code, GitHub, Porymap
+    PAGE_TOOLS_2, // Tools,  Graphics Gale, Aseprite, Tilemap Studio
+    PAGE_OW_TILES, // OW Tiles, Shahar, Dragonflye, Xencleamas
+    PAGE_BACKGROUND_ART, //Background Art, Shahar, kWharever, Oscar Brock, Lucbui
+    //PAGE_SPRITES, // Trainer Sprite, Shahar, Dragonflye, Dante, Baro
+    //PAGE_SPRITES_2, // Trainer Sprite, Kyledove
+    //PAGE_OW_OBJECTS, // OW Objects, Shahar, Dragonflye, aveontrainer, 
+    PAGE_FEATURE_BRANCH, // Feature Branch mid-battle evolution, ctf, zed, Shahar
+    PAGE_SUPPORT, // Support, TAH, Maya
+    PAGE_SPECIAL_THANKS, // Special Thanks
+    /*PAGE_TITLE,
     PAGE_DIRECTOR,
     PAGE_ART_DIRECTOR,
     PAGE_WORLD_DIRECTOR,
@@ -56,15 +74,16 @@ enum
     PAGE_PRODUCERS,
     PAGE_EXECUTIVE_DIRECTOR,
     PAGE_EXECUTIVE_PRODUCERS_1,
-    PAGE_EXECUTIVE_PRODUCERS_2,
+    PAGE_EXECUTIVE_PRODUCERS_2,*/
     PAGE_COUNT
 };
 
 #define ENTRIES_PER_PAGE 5
 
 static const u8 sCreditsText_EmptyString[]                    = _("");
-static const u8 sCreditsText_PkmnEmeraldVersion[]             = _("POKéMON EMERALD VERSION");
+static const u8 sCreditsText_PkmnEmeraldVersion[]             = _("POKéMON TWO VERSION");
 static const u8 sCreditsText_Credits[]                        = _("Credits");
+/*
 static const u8 sCreditsText_ExecutiveDirector[]              = _("Executive Director");
 static const u8 sCreditsText_Director[]                       = _("Director");
 static const u8 sCreditsText_ArtDirector[]                    = _("Art Director");
@@ -221,9 +240,89 @@ static const u8 sCreditsText_MotoyasuTojima[]                 = _("Motoyasu Toji
 static const u8 sCreditsText_NicolaPrattBarlow[]              = _("Nicola Pratt-Barlow");
 static const u8 sCreditsText_ShellieDow[]                     = _("Shellie Dow");
 static const u8 sCreditsText_ErikJohnson[]                    = _("Erik Johnson");
+*/
+// own credits Shahar
+static const u8 sCreditsText_Creator[]                        = _("Creator");
+static const u8 sCreditsText_Shahar[]                         = _("Shahar");
+static const u8 sCreditsText_Programming[]                    = _("Programming");
+static const u8 sCreditsText_Mapping[]                        = _("Mapping");
+static const u8 sCreditsText_Scripting[]                      = _("Scripting");
+static const u8 sCreditsText_Art[]                            = _("Art");
+static const u8 sCreditsText_Base[]                           = _("Based on POKéMON EMERALD VERSION");
+static const u8 sCreditsText_Gamefreak[]                      = _("Gamefreak");
+static const u8 sCreditsText_Nintendo[]                       = _("Nintendo");
+static const u8 sCreditsText_CreaturesInc[]                   = _("Creatures Inc");
+static const u8 sCreditsText_Decomp[]                         = _("Based on the Pokeemerald Decomp");
+static const u8 sCreditsText_pret[]                           = _("POKéMON Reverse Engineering Team");
+static const u8 sCreditsText_RHH[]                            = _("Rom Hacking Hideout");
+
+static const u8 sCreditsText_Tools[]                          = _("Tools");
+static const u8 sCreditsText_VSC[]                            = _("Visual Studio Code");
+static const u8 sCreditsText_GitHub[]                         = _("GitHub");
+static const u8 sCreditsText_Porymap[]                        = _("Porymap");
+
+static const u8 sCreditsText_GraphicsGale[]                   = _("GraphicsGale");
+static const u8 sCreditsText_Aseprite[]                       = _("Aseprite");
+static const u8 sCreditsText_TilemapStudio[]                  = _("Tilemap Studio");
+
+static const u8 sCreditsText_OWTiles[]                        = _("OW Tiles");
+//static const u8 sCreditsText_OWObjects[]                      = _("OW Objects");
+//static const u8 sCreditsText_Sprites[]                        = _("Sprites");
+static const u8 sCreditsText_BackgroundArt[]                  = _("Background Art");
+static const u8 sCreditsText_FeatureBranch[]                  = _("Feature Branch");
+static const u8 sCreditsText_BattleUI[]                       = _("Battle UI");
+static const u8 sCreditsText_Support[]                        = _("Support");
+static const u8 sCreditsText_SpecialThanks[]                  = _("Special Thanks");
+
+static const u8 sCreditsText_kWharever[]                      = _("kWharever"); // bg art
+static const u8 sCreditsText_LeoB[]                           = _("LeoB"); // ow tiles
+static const u8 sCreditsText_Nico[]                           = _("Nico"); // battle ui
+static const u8 sCreditsText_Archie[]                         = _("Archie"); // battle ui
+
+static const u8 sCreditsText_AquasHideout[]                   = _("Team Aqua's Hideout Crew"); // support
+static const u8 sCreditsText_Maya[]                           = _("Maya"); // special thanks
+
 static const struct CreditsEntry sCreditsEntry_EmptyString                      = { 0, FALSE, sCreditsText_EmptyString};
 static const struct CreditsEntry sCreditsEntry_PkmnEmeraldVersion               = { 7,  TRUE, sCreditsText_PkmnEmeraldVersion};
 static const struct CreditsEntry sCreditsEntry_Credits                          = {11,  TRUE, sCreditsText_Credits};
+
+static const struct CreditsEntry sCreditsEntry_Creator                          = {0,  TRUE, sCreditsText_Creator};
+static const struct CreditsEntry sCreditsEntry_Programming                      = {0,  TRUE, sCreditsText_Programming};
+static const struct CreditsEntry sCreditsEntry_Mapping                          = {0,  TRUE, sCreditsText_Mapping};
+static const struct CreditsEntry sCreditsEntry_Scripting                        = {0,  TRUE, sCreditsText_Scripting};
+static const struct CreditsEntry sCreditsEntry_Art                              = {0,  TRUE, sCreditsText_Art};
+static const struct CreditsEntry sCreditsEntry_Base                             = {0,  TRUE, sCreditsText_Base};
+static const struct CreditsEntry sCreditsEntry_Gamefreak                        = {0,  FALSE, sCreditsText_Gamefreak};
+static const struct CreditsEntry sCreditsEntry_Nintendo                         = {0,  FALSE, sCreditsText_Nintendo};
+static const struct CreditsEntry sCreditsEntry_CreaturesInc                     = {0,  FALSE, sCreditsText_CreaturesInc};
+static const struct CreditsEntry sCreditsEntry_Decomp                           = {0,  TRUE, sCreditsText_Decomp};
+static const struct CreditsEntry sCreditsEntry_pret                             = {0,  FALSE, sCreditsText_pret};
+static const struct CreditsEntry sCreditsEntry_RHH                              = {0,  FALSE, sCreditsText_RHH};
+static const struct CreditsEntry sCreditsEntry_Tools                            = {0,  TRUE, sCreditsText_Tools};
+static const struct CreditsEntry sCreditsEntry_VSC                              = {0,  FALSE, sCreditsText_VSC};
+static const struct CreditsEntry sCreditsEntry_GitHub                           = {0,  FALSE, sCreditsText_GitHub};
+static const struct CreditsEntry sCreditsEntry_Porymap                          = {0,  FALSE, sCreditsText_Porymap};
+static const struct CreditsEntry sCreditsEntry_GraphicsGale                     = {0,  FALSE, sCreditsText_GraphicsGale};
+static const struct CreditsEntry sCreditsEntry_Aseprite                         = {0,  FALSE, sCreditsText_Aseprite};
+static const struct CreditsEntry sCreditsEntry_TilemapStudio                    = {0,  FALSE, sCreditsText_TilemapStudio};
+
+static const struct CreditsEntry sCreditsEntry_OWTiles                          = {0,  TRUE, sCreditsText_OWTiles};
+static const struct CreditsEntry sCreditsEntry_BackgroundArt                    = {0,  TRUE, sCreditsText_BackgroundArt};
+static const struct CreditsEntry sCreditsEntry_FeatureBranch                    = {0,  TRUE, sCreditsText_FeatureBranch};
+static const struct CreditsEntry sCreditsEntry_BattleUI                         = {0,  TRUE, sCreditsText_BattleUI};
+static const struct CreditsEntry sCreditsEntry_Support                          = {0,  TRUE, sCreditsText_Support};
+static const struct CreditsEntry sCreditsEntry_SpecialThanks                    = {0,  TRUE, sCreditsText_SpecialThanks};
+
+static const struct CreditsEntry sCreditsEntry_Shahar                           = {0,  FALSE, sCreditsText_Shahar};
+static const struct CreditsEntry sCreditsEntry_Maya                             = {0,  FALSE, sCreditsText_Maya};
+
+static const struct CreditsEntry sCreditsEntry_LeoB                             = {0,  FALSE, sCreditsText_LeoB};
+static const struct CreditsEntry sCreditsEntry_Nico                             = {0,  FALSE, sCreditsText_Nico};
+static const struct CreditsEntry sCreditsEntry_Archie                           = {0,  FALSE, sCreditsText_Archie};
+static const struct CreditsEntry sCreditsEntry_kWharever                        = {0,  FALSE, sCreditsText_kWharever};
+static const struct CreditsEntry sCreditsEntry_AquasHideout                     = {0,  FALSE, sCreditsText_AquasHideout};
+
+/*
 static const struct CreditsEntry sCreditsEntry_ExecutiveDirector                = { 8,  TRUE, sCreditsText_ExecutiveDirector};
 static const struct CreditsEntry sCreditsEntry_Director                         = {12,  TRUE, sCreditsText_Director};
 static const struct CreditsEntry sCreditsEntry_ArtDirector                      = {10,  TRUE, sCreditsText_ArtDirector};
@@ -380,17 +479,118 @@ static const struct CreditsEntry sCreditsEntry_MotoyasuTojima                   
 static const struct CreditsEntry sCreditsEntry_NicolaPrattBarlow                = { 0, FALSE, sCreditsText_NicolaPrattBarlow};
 static const struct CreditsEntry sCreditsEntry_ShellieDow                       = { 0, FALSE, sCreditsText_ShellieDow};
 static const struct CreditsEntry sCreditsEntry_ErikJohnson                      = { 0, FALSE, sCreditsText_ErikJohnson};
+*/
 
 #define _ &sCreditsEntry_EmptyString
 static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][ENTRIES_PER_PAGE] =
 {
-    [PAGE_TITLE] = {
+    [PAGE_TITLE_HACK] = {
         _,
         &sCreditsEntry_PkmnEmeraldVersion,
         &sCreditsEntry_Credits,
         _,
         _
     },
+    [PAGE_CREATOR] = {
+        _,
+        &sCreditsEntry_Creator,
+        &sCreditsEntry_Shahar,
+        _,
+        _
+    },
+    [PAGE_PROGRAMMING] = {
+        _,
+        &sCreditsEntry_Programming,
+        &sCreditsEntry_Shahar,
+        _,
+        _
+    },
+    [PAGE_MAPPING] = {
+        _,
+        &sCreditsEntry_Mapping,
+        &sCreditsEntry_Shahar,
+        _,
+        _
+    },
+    [PAGE_SCRIPTING] = {
+        _,
+        &sCreditsEntry_Scripting,
+        &sCreditsEntry_Shahar,
+        _,
+        _
+    },
+    [PAGE_ART] = {
+        _,
+        &sCreditsEntry_Art,
+        &sCreditsEntry_Shahar,
+        _,
+        _
+    },
+    [PAGE_BASE] = {
+        &sCreditsEntry_Base,
+        &sCreditsEntry_Gamefreak,
+        &sCreditsEntry_Nintendo,
+        &sCreditsEntry_CreaturesInc,
+        _
+    },
+    [PAGE_DECOMP] = {
+        _,
+        &sCreditsEntry_Decomp,
+        &sCreditsEntry_pret,
+        &sCreditsEntry_RHH,
+        _
+    },
+    [PAGE_TOOLS] = {
+        &sCreditsEntry_Tools,
+        &sCreditsEntry_VSC,
+        &sCreditsEntry_GitHub,
+        &sCreditsEntry_Porymap,
+        _
+    },
+    [PAGE_TOOLS_2] = {
+        &sCreditsEntry_Tools,
+        &sCreditsEntry_GraphicsGale,
+        &sCreditsEntry_Aseprite,
+        &sCreditsEntry_TilemapStudio,
+        _
+    },
+    [PAGE_OW_TILES] = {
+        &sCreditsEntry_OWTiles,
+        &sCreditsEntry_Shahar,
+        &sCreditsEntry_LeoB,
+        _,
+        _
+    },
+    [PAGE_BACKGROUND_ART] = {
+        &sCreditsEntry_BackgroundArt,
+        &sCreditsEntry_Shahar,
+        &sCreditsEntry_kWharever,
+        _,
+        _
+    },
+    [PAGE_FEATURE_BRANCH] = {
+        &sCreditsEntry_FeatureBranch,
+        &sCreditsEntry_BattleUI,
+        &sCreditsEntry_Nico,
+        &sCreditsEntry_Archie,
+        &sCreditsEntry_Shahar
+    },
+    [PAGE_SUPPORT] = {
+        _,
+        &sCreditsEntry_Support,
+        &sCreditsEntry_AquasHideout,
+        &sCreditsEntry_Maya,
+        _
+    },
+    [PAGE_SPECIAL_THANKS] = {
+        _,
+        &sCreditsEntry_SpecialThanks,
+        &sCreditsEntry_Shahar,
+        _,
+        _
+    },
+
+    /*
     [PAGE_DIRECTOR] = {
         _,
         &sCreditsEntry_Director,
@@ -782,6 +982,6 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_TsunekazIshihara,
         _,
         _,
-    },
+    }, */
 };
 #undef _
