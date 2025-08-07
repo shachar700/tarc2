@@ -1422,7 +1422,7 @@ static void NamingScreen_CreateWaldaDadIcon(void)
 {
     u8 spriteId;
 
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAN_1, SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MY_OBSTAGOON, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
 }
@@ -2108,9 +2108,9 @@ static void UNUSED Debug_NamingScreenNickname(void)
 // Initial pages below are pointless, they're overwritten with KBPAGE_LETTERS_UPPER in MainState_FadeIn()
 static const struct NamingScreenTemplate sPlayerNamingScreenTemplate =
 {
-    .copyExistingString = FALSE,
+    .copyExistingString = TRUE,
     .maxChars = PLAYER_NAME_LENGTH,
-    .iconFunction = 1,
+    .iconFunction = 4,
     .addGenderIcon = FALSE,
     .initialPage = KBPAGE_LETTERS_UPPER,
     .unused = 35,

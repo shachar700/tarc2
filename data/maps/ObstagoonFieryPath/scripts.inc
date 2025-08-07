@@ -16,7 +16,7 @@ ObstagoonFieryPath_EventScript_Caught::
 	msgbox ObstagoonRunaway_Text_Obstagoon, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	addvar VAR_TWO_RESPAWN_COUNTER, 1
+	addmoney 1
 	warp MAP_OBSTAGOON_FIERY_PATH, 27, 32
 	waitstate
 	release
@@ -50,7 +50,7 @@ ObstagoonFieryPath_EventScript_Wooloo::
 	givemon species=SPECIES_WOOLOO, level=20, isShiny=TRUE
 	givemon species=SPECIES_ZIGZAGOON, level=20
 	givemon species=SPECIES_WOOLOO, level=20
-	buffernumberstring STR_VAR_1, VAR_TWO_RESPAWN_COUNTER
+	@buffernumberstring STR_VAR_1, VAR_TWO_RESPAWN_COUNTER
 	msgbox ObstagoonFieryPath_Text_Completed, MSGBOX_DEFAULT
 	closemessage
 	special GameClear

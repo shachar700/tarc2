@@ -11,7 +11,7 @@ ObstagoonRunaway_EventScript_Caught::
 	msgbox ObstagoonRunaway_Text_Obstagoon, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	addvar VAR_TWO_RESPAWN_COUNTER, 1
+	addmoney 1
 	warp MAP_OBSTAGOON_RUNAWAY, 0, 61
 	waitstate
 	release

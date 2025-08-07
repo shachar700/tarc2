@@ -62,7 +62,7 @@ WoolooPasture_2_EventScript_Caught::
 	waitmoncry
 	closemessage
 	setvar VAR_WOOLOO_PASTURE_2_STATE, 0
-	addvar VAR_TWO_RESPAWN_COUNTER, 1
+	addmoney 1
 	warp MAP_WOOLOO_PASTURE_2, 1, 11
 	waitstate
 	release

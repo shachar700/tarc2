@@ -326,7 +326,7 @@ WoolooSnack_EventScript_ObstagoonRestart::
 	msgbox WoolooSnack_Text_ObstagoonRestart, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, WoolooSnack_EventScript_RockClimbDeclined
 	setvar VAR_WOOLOO_SNACK_STATE, 0
-	addvar VAR_TWO_RESPAWN_COUNTER, 1
+	addmoney 1
 	warp MAP_WOOLOO_SNACK, 11, 5
 	waitstate
 	release

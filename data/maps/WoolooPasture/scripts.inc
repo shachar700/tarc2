@@ -4,10 +4,17 @@ WoolooPasture_MapScripts::
 	.byte 0
 
 WoolooPasture_OnTransition:
+	clearflag FLAG_WOOLOO_PASTURE_SHINY_WOOLOO
+	clearflag FLAG_WOOLOO_PASTURE_WOOLOO_LEFT
+	clearflag FLAG_WOOLOO_PASTURE_WOOLOO_RIGHT
+	clearflag FLAG_OBSTAGON_CHASES_WOOLOO
+	setvar VAR_WOOLOO_PASTURE_STATE, 0
+	setvar VAR_WOOLOO_PASTURE_2_STATE, 0
+	setvar VAR_WOOLOO_SNACK_STATE, 0
 	setflag FLAG_SYS_B_DASH
 	setrespawn HEAL_LOCATION_TWO_START
+	addvar VAR_TWO_RESTART_COUNTER, 1
 	end
-
 
 WoolooPasture_OnFrame:
 	map_script_2 VAR_WOOLOO_PASTURE_STATE, 4, WoolooPasture_EventScript_Completed
@@ -25,10 +32,6 @@ WoolooPasture_EventScript_Completed:
 
 WoolooPasture_EventScript_Trigger_WoolooPanic::
 	lock
-	setflag FLAG_BADGE01_GET
-	setflag FLAG_BADGE02_GET
-	givemon SPECIES_OBSTAGOON, 15
-	setflag FLAG_SYS_POKEMON_GET
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_ge VAR_TEMP_0, 21, WoolooPasture_EventScript_MoveLeft
 	call_if_le VAR_TEMP_0, 20, WoolooPasture_EventScript_MoveDown

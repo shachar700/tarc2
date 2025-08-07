@@ -1045,6 +1045,8 @@ static void PrintMoneyOnCard(void)
     else
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 57, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
 
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 73, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardRestart);
+
     ConvertIntToDecimalStringN(gStringVar1, sData->trainerCard.money, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
     if (!sData->isHoenn)
@@ -1058,6 +1060,11 @@ static void PrintMoneyOnCard(void)
         top = 57;
     }
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+
+    ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_TWO_RESTART_COUNTER), STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
+    StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
+
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xOffset, 73, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
 }
 
 static u16 GetCaughtMonsCount(void)
@@ -1099,8 +1106,9 @@ static void PrintTimeOnCard(void)
 {
     u16 hours;
     u16 minutes;
-    s32 width;
-    u32 x, y, totalWidth;
+    u16 seconds;
+    s32 widthColon, totalWidth;
+    u32 x, y;
 
     if (!sData->isHoenn)
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 88, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
@@ -1111,19 +1119,21 @@ static void PrintTimeOnCard(void)
     {
         hours = sData->trainerCard.playTimeHours;
         minutes = sData->trainerCard.playTimeMinutes;
+        seconds = 0; // No seconds saved in link card
     }
     else
     {
         hours = gSaveBlock2Ptr->playTimeHours;
         minutes = gSaveBlock2Ptr->playTimeMinutes;
+        seconds = gSaveBlock2Ptr->playTimeSeconds;
     }
 
-    if (hours > 999)
-        hours = 999;
-    if (minutes > 59)
-        minutes = 59;
-    width = GetStringWidth(FONT_NORMAL, gText_Colon2, 0);
+    if (hours > 999) hours = 999;
+    if (minutes > 59) minutes = 59;
+    if (seconds > 59) seconds = 59;
 
+    widthColon = GetStringWidth(FONT_NORMAL, gText_Colon2, 0); // Width of colon ":"
+    
     if (!sData->isHoenn)
     {
         x = 144;
@@ -1131,19 +1141,36 @@ static void PrintTimeOnCard(void)
     }
     else
     {
-        x = 128;
+        x = 116;
         y = 89;
     }
-    totalWidth = width + 30;
+
+    // Calculate total width: HH(3 digits) + colon + MM(2 digits) + colon + SS(2 digits)
+    totalWidth = 30 + (2 * widthColon); // Approximate space
     x -= totalWidth;
 
-    FillWindowPixelRect(WIN_CARD_TEXT, PIXEL_FILL(0), x, y, totalWidth, 15);
+    FillWindowPixelRect(WIN_CARD_TEXT, PIXEL_FILL(0), x, y, totalWidth + 12, 15);
+
+    // Print hours
     ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
     x += 18;
+
+    // Print first colon
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTimeColonTextColors[sData->timeColonInvisible], TEXT_SKIP_DRAW, gText_Colon2);
-    x += width;
+    x += widthColon;
+
+    // Print minutes
     ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    x += 12;
+
+    // Print second colon
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTimeColonTextColors[sData->timeColonInvisible], TEXT_SKIP_DRAW, gText_Colon2);
+    x += widthColon;
+
+    // Print seconds
+    ConvertIntToDecimalStringN(gStringVar4, seconds, STR_CONV_MODE_LEADING_ZEROS, 2);
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
 }
 
