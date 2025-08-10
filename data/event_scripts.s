@@ -1173,3 +1173,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/WoolooSnack/scripts.inc"
 
 	.include "data/maps/ObstagoonFieryPath/scripts.inc"
+
+	.include "data/maps/ObstagoonTemple/scripts.inc"
+
+	.include "data/maps/SafariZone_Northwest_2/scripts.inc"
+
+	.include "data/maps/SafariZone_Southeast_2/scripts.inc"
+
+	.include "data/maps/SafariZone_North_2/scripts.inc"
+
+	.include "data/maps/SafariZone_South_2/scripts.inc"
+
+	.include "data/maps/SafariZone_Northeast_2/scripts.inc"
+
+	.include "data/maps/SafariZone_Southwest_2/scripts.inc"

@@ -72,6 +72,7 @@ WoolooPasture_2_EventScript_Trigger_1::
 	lock
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
+	waitse
 	playse SE_PIN
 	applymovement LOCALID_WOOLOO_1, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -79,6 +80,9 @@ WoolooPasture_2_EventScript_Trigger_1::
 	waitmovement 0
 	applymovement LOCALID_WOOLOO_1, Common_Movement_Delay48
 	waitmovement 0
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
+	delay 40
+	waitmoncry
 	applymovement LOCALID_WOOLOO_1, Wooloopasture_2_Movement_ApproachLedge
 	waitmovement 0
 	playse SE_LEDGE
@@ -150,6 +154,7 @@ WoolooPasture_2_EventScript_Wooloo3::
 
 WoolooPasture_2_EventScript_Trigger_2::
 	lock
+	waitse
 	playse SE_PIN
 	applymovement LOCALID_WOOLOO_2, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -157,6 +162,9 @@ WoolooPasture_2_EventScript_Trigger_2::
 	waitmovement 0
 	applymovement LOCALID_WOOLOO_2, Common_Movement_Delay48
 	waitmovement 0
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
+	delay 40
+	waitmoncry
 	applymovement LOCALID_WOOLOO_2, Wooloopasture_2_Movement_ApproachLedge2
 	waitmovement 0
 	playse SE_LEDGE
@@ -170,6 +178,7 @@ WoolooPasture_2_EventScript_Trigger_2::
 
 WoolooPasture_2_EventScript_Trigger_3GoBack::
 	lock
+	waitse
 	playse SE_PIN
 	applymovement LOCALID_WOOLOO_2, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -177,6 +186,9 @@ WoolooPasture_2_EventScript_Trigger_3GoBack::
 	waitmovement 0
 	applymovement LOCALID_WOOLOO_2, Common_Movement_Delay48
 	waitmovement 0
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
+	delay 40
+	waitmoncry
 	applymovement LOCALID_WOOLOO_2, Wooloopasture_2_Movement_GoBackToStartWooloo2
 	waitmovement 0
 	setvar VAR_TEMP_1, 0
@@ -187,6 +199,7 @@ WoolooPasture_2_EventScript_Trigger_3GoBack::
 
 WoolooPasture_2_EventScript_Trigger_3Corner::
 	lock
+	waitse
 	playse SE_PIN
 	applymovement LOCALID_WOOLOO_2, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -194,6 +207,9 @@ WoolooPasture_2_EventScript_Trigger_3Corner::
 	waitmovement 0
 	applymovement LOCALID_WOOLOO_2, Common_Movement_Delay48
 	waitmovement 0
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
+	delay 40
+	waitmoncry
 	applymovement LOCALID_WOOLOO_2, Wooloopasture_2_Movement_GoToCornerWooloo2
 	waitmovement 0
 	addvar VAR_TEMP_1, 1
@@ -204,6 +220,7 @@ WoolooPasture_2_EventScript_Trigger_3Corner::
 
 WoolooPasture_2_EventScript_Trigger_4a::
 	lock
+	waitse
 	playse SE_PIN
 	applymovement LOCALID_WOOLOO_3, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -211,6 +228,9 @@ WoolooPasture_2_EventScript_Trigger_4a::
 	waitmovement 0
 	applymovement LOCALID_WOOLOO_3, Common_Movement_Delay48
 	waitmovement 0
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
+	delay 40
+	waitmoncry
 	applymovement LOCALID_WOOLOO_3, Wooloopasture_2_Movement_GoToLastCorner1
 	waitmovement 0
 	addvar VAR_TEMP_2, 1
@@ -221,6 +241,7 @@ WoolooPasture_2_EventScript_Trigger_4a::
 
 WoolooPasture_2_EventScript_Trigger_4b::
 	lock
+	waitse
 	playse SE_PIN
 	applymovement LOCALID_WOOLOO_3, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -228,6 +249,9 @@ WoolooPasture_2_EventScript_Trigger_4b::
 	waitmovement 0
 	applymovement LOCALID_WOOLOO_3, Common_Movement_Delay48
 	waitmovement 0
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
+	delay 40
+	waitmoncry
 	applymovement LOCALID_WOOLOO_3, Wooloopasture_2_Movement_GoToLastCorner2
 	waitmovement 0
 	addvar VAR_TEMP_2, 1

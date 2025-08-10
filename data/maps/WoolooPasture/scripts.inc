@@ -8,9 +8,16 @@ WoolooPasture_OnTransition:
 	clearflag FLAG_WOOLOO_PASTURE_WOOLOO_LEFT
 	clearflag FLAG_WOOLOO_PASTURE_WOOLOO_RIGHT
 	clearflag FLAG_OBSTAGON_CHASES_WOOLOO
+	clearflag FLAG_DECORATION_1
+	clearflag FLAG_DECORATION_2
+	clearflag FLAG_DECORATION_3
+	clearflag FLAG_DECORATION_4
+	clearflag FLAG_DECORATION_5
+	clearflag FLAG_DECORATION_6
 	setvar VAR_WOOLOO_PASTURE_STATE, 0
 	setvar VAR_WOOLOO_PASTURE_2_STATE, 0
 	setvar VAR_WOOLOO_SNACK_STATE, 0
+	setvar VAR_SAFARI_ZONE_WOOLOO, 0
 	setflag FLAG_SYS_B_DASH
 	setrespawn HEAL_LOCATION_TWO_START
 	addvar VAR_TWO_RESTART_COUNTER, 1
@@ -115,11 +122,11 @@ WoolooPasture_EventScript_ShinyWooloo::
 	dowildbattle
 	playmoncry SPECIES_WOOLOO, CRY_MODE_FAINT
 	waitmoncry
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_SHINY_WOOLOO
 	setflag FLAG_WOOLOO_PASTURE_SHINY_WOOLOO
 	addvar VAR_WOOLOO_PASTURE_STATE, 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	special HealPlayerParty
 	release
 	end
@@ -135,11 +142,11 @@ WoolooPasture_EventScript_LeftWooloo::
 	dowildbattle
 	playmoncry SPECIES_WOOLOO, CRY_MODE_FAINT
 	waitmoncry
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_WOOLOO_LEFT
 	setflag FLAG_WOOLOO_PASTURE_WOOLOO_LEFT
 	addvar VAR_WOOLOO_PASTURE_STATE, 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	special HealPlayerParty
 	release
 	end
@@ -155,11 +162,11 @@ WoolooPasture_EventScript_RightWooloo::
 	dowildbattle
 	playmoncry SPECIES_WOOLOO, CRY_MODE_FAINT
 	waitmoncry
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_WOOLOO_RIGHT
 	setflag FLAG_WOOLOO_PASTURE_WOOLOO_RIGHT
 	addvar VAR_WOOLOO_PASTURE_STATE, 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	special HealPlayerParty
 	release
 	end

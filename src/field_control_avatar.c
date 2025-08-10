@@ -74,6 +74,7 @@ static bool8 TryStartMiscWalkingScripts(u16);
 static bool8 TryStartStepCountScript(u16);
 static void UpdateFriendshipStepCounter(void);
 static void UpdateFollowerStepCounter(void);
+static void UpdateObstagoonStepCounter(void);
 #if OW_POISON_DAMAGE < GEN_5
 static bool8 UpdatePoisonStepCounter(void);
 #endif // OW_POISON_DAMAGE
@@ -478,7 +479,7 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
     if (MetatileBehavior_IsCableBoxResults1(metatileBehavior) == TRUE)
         return EventScript_CableBoxResults;
     if (MetatileBehavior_IsPokeblockFeeder(metatileBehavior) == TRUE)
-        return EventScript_PokeBlockFeeder;
+        return SafariZone_North_2_EventScript_StepsCounter;
     if (MetatileBehavior_IsTrickHousePuzzleDoor(metatileBehavior) == TRUE)
         return Route110_TrickHousePuzzle_EventScript_Door;
     if (MetatileBehavior_IsRegionMap(metatileBehavior) == TRUE)
@@ -672,6 +673,7 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     UpdateFriendshipStepCounter();
     UpdateFarawayIslandStepCounter();
     UpdateFollowerStepCounter();
+    UpdateObstagoonStepCounter();
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {
@@ -769,6 +771,46 @@ static void UpdateFollowerStepCounter(void)
 {
     if (gPlayerPartyCount > 0 && gFollowerSteps < (u16)-1)
         gFollowerSteps++;
+}
+
+static void UpdateObstagoonStepCounter(void)
+{
+    u16 *ptr = GetVarPointer(VAR_OBSTAGOON_STEPS_COUNTER);
+    
+    if(!(   
+        (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_NORTHWEST_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_NORTHWEST_2))) ||
+    
+       (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_NORTH_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_NORTH_2))) ||
+        
+         (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_SOUTHWEST_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_SOUTHWEST_2))) ||
+
+     (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_SOUTH_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_SOUTH_2))) ||
+
+     (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_NORTHEAST_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_NORTHEAST_2))) ||
+
+     (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_SOUTHEAST_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_SOUTHEAST_2)))    ))
+        return;
+
+    (*ptr)++;
+    (*ptr) %= 700;
+    if (*ptr == 0)
+    {
+        VarSet(VAR_OBSTAGOON_STEPS_COUNTER, 0);
+        VarSet(VAR_SAFARI_ZONE_WOOLOO, 0);
+        FlagClear(FLAG_DECORATION_1);
+        FlagClear(FLAG_DECORATION_2);
+        FlagClear(FLAG_DECORATION_3);
+        FlagClear(FLAG_DECORATION_4);
+        FlagClear(FLAG_DECORATION_5);
+        FlagClear(FLAG_DECORATION_6);
+        ScriptContext_SetupScript(EventScript_WarpBackToSafariZone);
+    } 
 }
 
 void ClearPoisonStepCounter(void)

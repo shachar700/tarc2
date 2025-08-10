@@ -53,14 +53,14 @@ ObstagoonFieryPath_EventScript_Wooloo::
 	@buffernumberstring STR_VAR_1, VAR_TWO_RESPAWN_COUNTER
 	msgbox ObstagoonFieryPath_Text_Completed, MSGBOX_DEFAULT
 	closemessage
-	special GameClear
-	waitstate
-	releaseall
-	@setflag FLAG_SYS_B_DASH
-	@setflag FLAG_SYS_POKEMON_GET
-	@togglegender
-	@warp MAP_ROUTE101, 9, 9
+	@special GameClear
 	@waitstate
+	@releaseall
+	setflag FLAG_SYS_B_DASH
+	setflag FLAG_SYS_POKEMON_GET
+	togglegender
+	warp MAP_SAFARI_ZONE_NORTH_2, 5, 38
+	waitstate
 	end
 
 ObstagoonFieryPath_Text_PickedPokeToy:
