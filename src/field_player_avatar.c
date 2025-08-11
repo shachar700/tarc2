@@ -979,7 +979,10 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
         gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(GROWLITHE_HISUI) ||
         gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(HOUNDOOM) ||
         gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(HERDIER) ||
-        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(FENNEKIN)))
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(FENNEKIN)||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(LINOONE)||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(ZIGZAGOON_GALAR)||
+        gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(LINOONE_GALAR)))
         {
             x = gObjectEvents[objectEventId].currentCoords.x;
             y = gObjectEvents[objectEventId].currentCoords.y;

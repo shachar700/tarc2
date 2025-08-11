@@ -808,6 +808,14 @@ static const struct SpriteFrameImage sPicTable_BallCushion[] = {
     obj_frame_tiles(gObjectEventPic_BallCushion),
 };
 
+static const struct SpriteFrameImage sPicTable_WoolooCushion[] = {
+    obj_frame_tiles(gObjectEventPic_WoolooCushion),
+};
+
+static const struct SpriteFrameImage sPicTable_ObstagoonCushion[] = {
+    obj_frame_tiles(gObjectEventPic_ObstagoonCushion),
+};
+
 static const struct SpriteFrameImage sPicTable_GrassCushion[] = {
     obj_frame_tiles(gObjectEventPic_GrassCushion),
 };
@@ -1363,4 +1371,8 @@ static const struct SpriteFrameImage sPicTable_MyObstagoon[] = {
 
 static const struct SpriteFrameImage sPicTable_MyWooloo[] = {
     overworld_ascending_frames(gObjectEventPic_MyWooloo, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Grace[] = {
+    overworld_ascending_frames(gObjectEventPic_Grace, 2, 4),
 };

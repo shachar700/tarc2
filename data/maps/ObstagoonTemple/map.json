@@ -4,7 +4,7 @@
   "layout": "LAYOUT_OBSTAGOON_TEMPLE",
   "music": "MUS_B_PYRAMID",
   "region_map_section": "MAPSEC_TWO_ISLAND",
-  "requires_flash": false,
+  "requires_flash": true,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
@@ -13,8 +13,599 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 41,
+      "y": 41,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_DECORATION_8"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 18,
+      "y": 40,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
+      "x": 1,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WoolooPushes_EventScript_ZigzagoonBoulder",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MY_OBSTAGOON_GUARD",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 47,
+      "y": 40,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 13,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_DECORATION_9"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 7,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POOCHYENA)",
+      "x": 17,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
+      "x": 16,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 26,
+      "y": 43,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 4,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_DECORATION_7"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 24,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_COPY_PLAYER_OPPOSITE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LINOONE)",
+      "x": 32,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WoolooPushes_EventScript_ZigzagoonBoulder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 23,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 22,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 43,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_DECORATION_10"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 19,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_DECORATION_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 20,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_DECORATION_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 29,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_DECORATION_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 20,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_DECORATION_14"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_CUSHION",
+      "x": 32,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ObstagoonTemple_EventScript_FireSign",
+      "flag": "FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 40,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 5,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OBSTAGOON)",
+      "x": 31,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "ObstagoonTemple_EventScript_Caught",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 0,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_OBSTAGOON_TEMPLE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_PLAYER_ROOM",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ObstagoonTemple_Trigger_LeftButton"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ObstagoonTemple_Trigger_RightButton"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ObstagoonTemple_Trigger_LeftButton2"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "ObstagoonTemple_Trigger_RightButton2"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_OBSTAGOON_ALERT",
+      "var_value": "0",
+      "script": "ObstagoonTemple_EventScript_Alert"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_OBSTAGOON_ALERT",
+      "var_value": "0",
+      "script": "ObstagoonTemple_EventScript_Alert"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 48,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire1"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire2"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 38,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 40,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 44,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 46,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_StatueSign"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 42,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire3"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire4"
+    },
+    {
+      "type": "sign",
+      "x": 48,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire5"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire6"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 33,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire7"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire8"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_Fire9"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_FirewoodSign"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_FirewoodSign"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_FirewoodSign"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_FirewoodSign"
+    },
+    {
+      "type": "sign",
+      "x": 39,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_FirewoodSign"
+    },
+    {
+      "type": "sign",
+      "x": 45,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ObstagoonTemple_EventScript_FirewoodSign"
+    }
+  ]
 }

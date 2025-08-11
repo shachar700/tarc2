@@ -1,5 +1,5 @@
 gText_Birch_Welcome::
-	.string "Based on the fable:\n"
+	.string "Based on the fable/myth:\n"
 	.string "The Wolves & the Sheep\p"
 	.string "A pack of Wolves lurked near the\n"
 	.string "Sheep pasture.\p"
@@ -43,8 +43,8 @@ gText_Birch_BoyOrGirl::
 	.string "Or are you a girl?$"
 
 gText_Birch_WhatsYourName::
-	.string "All right.\n"
-	.string "What's your name?$"
+	.string "Close your eyes.\n"
+	.string "Start counting the sheeps.$"
 
 gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"

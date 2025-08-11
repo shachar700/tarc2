@@ -171,6 +171,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ZigzagCushi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SpinCushion;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DiamondCushion;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallCushion;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WoolooCushion;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ObstagoonCushion;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GrassCushion;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FireCushion;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WaterCushion;
@@ -243,6 +245,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MyObstagoon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MyWooloo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grace;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
@@ -427,6 +430,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SPIN_CUSHION] =             &gObjectEventGraphicsInfo_SpinCushion,
     [OBJ_EVENT_GFX_DIAMOND_CUSHION] =          &gObjectEventGraphicsInfo_DiamondCushion,
     [OBJ_EVENT_GFX_BALL_CUSHION] =             &gObjectEventGraphicsInfo_BallCushion,
+    [OBJ_EVENT_GFX_WOOLOO_CUSHION] =           &gObjectEventGraphicsInfo_WoolooCushion,
+    [OBJ_EVENT_GFX_OBSTAGOON_CUSHION] =        &gObjectEventGraphicsInfo_ObstagoonCushion,
     [OBJ_EVENT_GFX_GRASS_CUSHION] =            &gObjectEventGraphicsInfo_GrassCushion,
     [OBJ_EVENT_GFX_FIRE_CUSHION] =             &gObjectEventGraphicsInfo_FireCushion,
     [OBJ_EVENT_GFX_WATER_CUSHION] =            &gObjectEventGraphicsInfo_WaterCushion,
@@ -497,6 +502,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_MY_OBSTAGOON] =             &gObjectEventGraphicsInfo_MyObstagoon,
     [OBJ_EVENT_GFX_MY_WOOLOO] =                &gObjectEventGraphicsInfo_MyWooloo,
+    [OBJ_EVENT_GFX_GRACE] =                    &gObjectEventGraphicsInfo_Grace,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

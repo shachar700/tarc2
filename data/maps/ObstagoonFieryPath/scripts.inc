@@ -46,16 +46,8 @@ ObstagoonFieryPath_EventScript_Wooloo::
 	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
 	delay 40
 	waitmoncry
-	givemon species=SPECIES_WOOLOO, level=20
-	givemon species=SPECIES_WOOLOO, level=20, isShiny=TRUE
-	givemon species=SPECIES_ZIGZAGOON, level=20
-	givemon species=SPECIES_WOOLOO, level=20
-	@buffernumberstring STR_VAR_1, VAR_TWO_RESPAWN_COUNTER
 	msgbox ObstagoonFieryPath_Text_Completed, MSGBOX_DEFAULT
 	closemessage
-	@special GameClear
-	@waitstate
-	@releaseall
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_POKEMON_GET
 	togglegender

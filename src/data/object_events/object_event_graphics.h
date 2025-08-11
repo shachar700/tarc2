@@ -166,6 +166,8 @@ const u32 gObjectEventPic_MyObstagoon[] = INCBIN_U32("graphics/object_events/pic
 const u32 gObjectEventPic_MyWooloo[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/wooloo.4bpp");
 const u16 gObjectEventPal_MyObstagoon[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/obstagoon.gbapal");
 const u16 gObjectEventPal_MyWooloo[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/wooloo.gbapal");
+const u32 gObjectEventPic_Grace[] = INCBIN_U32("graphics/object_events/pics/people/grace.4bpp");
+const u16 gObjectEventPal_Grace[] = INCBIN_U16("graphics/object_events/pics/people/grace.gbapal");
 
 const u32 gObjectEventPic_RayquazaStill[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/rayquaza_still.4bpp");
 const u32 gObjectEventPic_TuberMSwimming[] = INCBIN_U32("graphics/object_events/pics/people/tuber_m_swimming.4bpp");
@@ -212,6 +214,8 @@ const u32 gObjectEventPic_ZigzagCushion[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_SpinCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/spin_cushion.4bpp");
 const u32 gObjectEventPic_DiamondCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/diamond_cushion.4bpp");
 const u32 gObjectEventPic_BallCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/ball_cushion.4bpp");
+const u32 gObjectEventPic_WoolooCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/wooloo_cushion.4bpp");
+const u32 gObjectEventPic_ObstagoonCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/obstagoon_cushion.4bpp");
 const u32 gObjectEventPic_GrassCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/grass_cushion.4bpp");
 const u32 gObjectEventPic_FireCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/fire_cushion.4bpp");
 const u32 gObjectEventPic_WaterCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/water_cushion.4bpp");

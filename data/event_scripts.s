@@ -1187,3 +1187,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SafariZone_Northeast_2/scripts.inc"
 
 	.include "data/maps/SafariZone_Southwest_2/scripts.inc"
+
+	.include "data/maps/PlayerRoom/scripts.inc"
