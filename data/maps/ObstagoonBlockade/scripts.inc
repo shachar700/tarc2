@@ -59,6 +59,7 @@ ObstagoonBlockade_EventScript_Wooloo::
 	closemessage
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE06_GET
 	togglegender
 	warp MAP_WOOLOO_SNACK, 11, 5
 	waitstate

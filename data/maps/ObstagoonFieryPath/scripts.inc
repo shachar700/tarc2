@@ -50,6 +50,7 @@ ObstagoonFieryPath_EventScript_Wooloo::
 	closemessage
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE08_GET
 	togglegender
 	warp MAP_SAFARI_ZONE_NORTH_2, 5, 38
 	waitstate

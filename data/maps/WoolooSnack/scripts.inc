@@ -13,6 +13,7 @@ WoolooSnack_EventScript_Completed:
 	msgbox WoolooSnack_Text_Completed, MSGBOX_AUTOCLOSE
 	clearflag FLAG_SYS_B_DASH
 	clearflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE07_GET
 	togglegender
 	warp MAP_OBSTAGOON_FIERY_PATH, 27, 32
 	waitstate

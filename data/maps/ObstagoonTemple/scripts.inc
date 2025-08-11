@@ -9,11 +9,13 @@ ObstagoonTemple_OnFrame:
 	.2byte 0
 
 ObstagoonTemple_Eventscript_EntranceOpened:
+	lock
 	msgbox ObstagoonTemple_Text_EntranceOpened, MSGBOX_DEFAULT
 	closemessage
 	addvar VAR_OBSTAGOON_TEMPLE_BUTTONS_PRESSED, 1
 	setobjectmovementtype 22, MOVEMENT_TYPE_FACE_DOWN
-	goto ObstagoonTemple_PutExitTiles
+	call ObstagoonTemple_PutExitTiles
+	release
 	end
 
 ObstagoonTemple_PutExitTiles:
@@ -29,7 +31,7 @@ ObstagoonTemple_PutExitTiles:
 	setmetatile 23, 2, 0x2A8, TRUE
 	setmetatile 24, 2, 0x2A9, FALSE
 	setmetatile 25, 2, 0x2AA, TRUE
-	end
+	return
 
 ObstagoonTemple_OnLoad:
 	call_if_set FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4, ObstagoonTemple_SetButton
@@ -305,6 +307,16 @@ ObstagoonTemple_EventScript_Alert::
 	release
 	end
 
+ObstagoonTemple_EventScript_Completed::
+	lock
+	msgbox ObstagoonTemple_Text_Completed, MSGBOX_DEFAULT
+	setmetatile 24, 7, 0x201, TRUE
+	special DrawWholeMapView
+	setflag FLAG_BADGE10_GET
+	closemessage
+	addvar VAR_TEMP_3, 1
+	release
+	end
 
 ObstagoonTemple_EventScript_FireDoNothing:
 	release
@@ -336,3 +348,6 @@ ObstagoonTemple_Text_FirewoodSign:
 
 ObstagoonTemple_Text_EntranceOpened:
 	.string "Exit path has opened.$"
+
+ObstagoonTemple_Text_Completed:
+	.string "{FONT_SMALL}Stage 10 completed.$"

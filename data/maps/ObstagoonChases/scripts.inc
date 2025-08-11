@@ -127,6 +127,7 @@ ObstagoonChases_EventScript_WoolooBattle::
 	msgbox ObstagoonChases_Text_Completed, MSGBOX_AUTOCLOSE
 	clearflag FLAG_SYS_B_DASH
 	clearflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE03_GET
 	togglegender
 	warp MAP_WOOLOO_PUSHES, 2, 7
 	waitstate

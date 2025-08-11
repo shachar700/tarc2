@@ -35,6 +35,8 @@
 #include "confetti_util.h"
 #include "constants/rgb.h"
 
+#include "money.h"
+
 #define HALL_OF_FAME_MAX_TEAMS 30
 #define TAG_CONFETTI 1001
 
@@ -723,7 +725,10 @@ static void Task_Hof_WaitAndPrintPlayerInfo(u8 taskId)
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 0x20, 0x20);
         HallOfFame_PrintPlayerInfo(1, 2);
         DrawDialogueFrame(0, FALSE);
-        AddTextPrinterParameterized2(0, FONT_NORMAL, gText_LeagueChamp, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+        ConvertIntToDecimalStringN(gStringVar1, GetMoney(&gSaveBlock1Ptr->money), STR_CONV_MODE_LEFT_ALIGN, 6);
+        ConvertIntToDecimalStringN(gStringVar2, VarGet(VAR_TWO_RESTART_COUNTER), STR_CONV_MODE_LEFT_ALIGN, 6);
+        StringExpandPlaceholders(gStringVar4, gText_LeagueChamp);
+        AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
         CopyWindowToVram(0, COPYWIN_FULL);
         gTasks[taskId].func = Task_Hof_ExitOnKeyPressed;
     }
@@ -1235,12 +1240,17 @@ static void HallOfFame_PrintPlayerInfo(u8 unused1, u8 unused2)
     if (text[0] == CHAR_0)
         text[0] = CHAR_SPACE;
     if (text[0] == CHAR_SPACE && text[1] == CHAR_0)
-        text[8] = CHAR_SPACE;
+        text[1] = CHAR_SPACE;
 
     text[3] = CHAR_COLON;
     text[4] = (gSaveBlock2Ptr->playTimeMinutes % 100) / 10 + CHAR_0;
     text[5] = (gSaveBlock2Ptr->playTimeMinutes % 10) + CHAR_0;
-    text[6] = EOS;
+
+    // Add seconds
+    text[6] = CHAR_COLON;
+    text[7] = (gSaveBlock2Ptr->playTimeSeconds % 60) / 10 + CHAR_0;
+    text[8] = (gSaveBlock2Ptr->playTimeSeconds % 60) % 10 + CHAR_0;
+    text[9] = EOS;
 
     width = GetStringRightAlignXOffset(FONT_NORMAL, text, 0x70);
     AddTextPrinterParameterized3(1, FONT_NORMAL, width, 0x21, sPlayerInfoTextColors, TEXT_SKIP_DRAW, text);

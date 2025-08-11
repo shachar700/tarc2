@@ -133,6 +133,7 @@ WoolooPushes_EventScript_ShinyWooloo::
 	msgbox WoolooPushes_Text_Completed, MSGBOX_AUTOCLOSE
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE04_GET
 	togglegender
 	warp MAP_WOOLOO_PASTURE_2, 1, 11
 	waitstate

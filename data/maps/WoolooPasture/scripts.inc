@@ -32,6 +32,7 @@ WoolooPasture_EventScript_Completed:
 	togglegender
 	clearflag FLAG_SYS_B_DASH
 	clearflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE01_GET
 	warp MAP_OBSTAGOON_RUNAWAY, 0, 61
 	waitstate
 	release

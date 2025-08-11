@@ -1326,8 +1326,8 @@
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
-#define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
-#define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
+#define FLAG_VISITED_LITTLEROOT_TOWN                0x4F9 // Unused Flag
+#define FLAG_VISITED_OLDALE_TOWN                    0x4FA // Unused Flag
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC
@@ -1364,11 +1364,10 @@
 #define FLAG_BADGE06_GET                             (SYSTEM_FLAGS + 0xC)
 #define FLAG_BADGE07_GET                             (SYSTEM_FLAGS + 0xD)
 #define FLAG_BADGE08_GET                             (SYSTEM_FLAGS + 0xE)
-#define NUM_BADGES                                   (1 + FLAG_BADGE08_GET - FLAG_BADGE01_GET)
+#define FLAG_BADGE09_GET                             (SYSTEM_FLAGS + 0xF)
+#define FLAG_BADGE10_GET                             (SYSTEM_FLAGS + 0x10)
+#define NUM_BADGES                                   (1 + FLAG_BADGE10_GET - FLAG_BADGE01_GET)
 
-// Towns and Cities
-#define FLAG_VISITED_LITTLEROOT_TOWN                (SYSTEM_FLAGS + 0xF)
-#define FLAG_VISITED_OLDALE_TOWN                    (SYSTEM_FLAGS + 0x10)
 #define FLAG_VISITED_DEWFORD_TOWN                   (SYSTEM_FLAGS + 0x11)
 #define FLAG_VISITED_LAVARIDGE_TOWN                 (SYSTEM_FLAGS + 0x12)
 #define FLAG_VISITED_FALLARBOR_TOWN                 (SYSTEM_FLAGS + 0x13)

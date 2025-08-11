@@ -27,6 +27,7 @@ ObstagoonRunaway_EventScript_Wooloo::
 	closemessage
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE02_GET
 	togglegender
 	warp MAP_OBSTAGOON_CHASES, 14, 12
 	waitstate

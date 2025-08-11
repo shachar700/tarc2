@@ -113,8 +113,6 @@ EventScript_ResetAllBerries::
 	return
 
 EventScript_ResetAllMapFlags::
-	setflag FLAG_BADGE01_GET
-	setflag FLAG_BADGE02_GET
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_SYS_NATIONAL_DEX
 	givemon SPECIES_OBSTAGOON, 15

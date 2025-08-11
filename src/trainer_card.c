@@ -1531,18 +1531,22 @@ static void DrawStarsAndBadgesOnCard(void)
     u16 tileNum = 192;
     u8 palNum = 3;
 
+    // number of 8x8 tiles per badge horizontally = 2 (16px wide)
+    // badges per row in your image = 10 -> tilesPerRow = 10 * 2 = 20
+    const u16 tilesPerRow = (160 / 8); // 160px wide image => 20 tiles per row
+
     FillBgTilemapBufferRect(3, 143, 15, yOffsets[sData->isHoenn], sData->trainerCard.stars, 1, 4);
     if (!sData->isLink)
     {
-        x = 4;
-        for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
+        x = 5;
+        for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 2)
         {
             if (sData->badgeCount[i])
             {
-                FillBgTilemapBufferRect(3, tileNum, x, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 16, x, 16, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 16, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum,             x,     15, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum + 1,         x + 1, 15, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum + tilesPerRow,     x,     16, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum + tilesPerRow + 1, x + 1, 16, 1, 1, palNum);
             }
         }
     }

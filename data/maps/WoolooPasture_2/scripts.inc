@@ -16,6 +16,7 @@ WoolooPasture_2_EventScript_Completed:
 	msgbox WoolooPasture_2_Text_Completed, MSGBOX_AUTOCLOSE
 	clearflag FLAG_SYS_B_DASH
 	clearflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE05_GET
 	togglegender
 	warp MAP_OBSTAGOON_BLOCKADE, 3, 3
 	waitstate
