@@ -2441,15 +2441,6 @@ static void InitObjectEventsLocal(void)
 static void InitObjectEventsReturnToField(void)
 {
     SpawnObjectEventsOnReturnToField(0, 0);
-
-    // ─────── Refresh the player’s sprite to match the new gender ───────
-    gPlayerAvatar.gender = gSaveBlock2Ptr->playerGender;
-    ObjectEventSetGraphicsId(
-        &gObjectEvents[gPlayerAvatar.objectEventId],
-        GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL)
-    );
-    // ───────────────────────────────────────────────────────────────────
-
     RotatingGate_InitPuzzleAndGraphics();
     RunOnReturnToFieldMapScript();
 }

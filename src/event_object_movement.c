@@ -2824,8 +2824,53 @@ static void RemoveObjectEventIfOutsideView(struct ObjectEvent *objectEvent)
 void SpawnObjectEventsOnReturnToField(s16 x, s16 y)
 {
     u32 i;
+    u8 oldFacingDir = gObjectEvents[gPlayerAvatar.objectEventId].facingDirection;
 
     ClearPlayerAvatarInfo();
+
+    // Keep same facing direction but refresh sprite
+    gPlayerAvatar.gender = gSaveBlock2Ptr->playerGender;
+
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+    ObjectEventSetGraphicsId(
+        playerObj,
+        GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL)
+    );
+
+    // Spawn all other events first
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        if (gObjectEvents[i].active)
+            SpawnObjectEventOnReturnToField(i, x, y);
+    }
+
+    // Restore original facing direction without flicker
+    StartSpriteAnim(&gSprites[playerObj->spriteId],
+        GetFaceDirectionAnimNum(oldFacingDir));
+
+    CreateReflectionEffectSprites();
+    TrySpawnLightSprites(x, y);
+}
+
+/*
+void SpawnObjectEventsOnReturnToField(s16 x, s16 y)
+{
+    u32 i;
+
+    ClearPlayerAvatarInfo();
+
+    // ─────── Refresh the player’s sprite to match the new gender ───────
+    gPlayerAvatar.gender = gSaveBlock2Ptr->playerGender;
+
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+    ObjectEventSetGraphicsId(
+        playerObj,
+        GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL)
+    );
+    StartSpriteAnim(&gSprites[playerObj->spriteId], 
+        GetFaceDirectionAnimNum(playerObj->facingDirection));
+    // ───────────────────────────────────────────────────────────────────
+
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
     {
         if (gObjectEvents[i].active)
@@ -2833,7 +2878,7 @@ void SpawnObjectEventsOnReturnToField(s16 x, s16 y)
     }
     CreateReflectionEffectSprites();
     TrySpawnLightSprites(x, y);
-}
+}*/
 
 static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
 {

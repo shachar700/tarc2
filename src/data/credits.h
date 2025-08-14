@@ -12,7 +12,7 @@ enum
     PAGE_TOOLS_2, // Tools,  Graphics Gale, Aseprite, Tilemap Studio
     PAGE_OW_TILES, // OW Tiles, Shahar, Xencleamas
     PAGE_BACKGROUND_ART, //Background Art, Shahar, kWharever, Oscar Brock, Lucbui
-    //PAGE_SPRITES, // Trainer Sprite, Shahar, Dragonflye, Dante, Baro
+    PAGE_SPRITES, // Trainer Sprite, Shahar, Dragonflye, Dante, Baro
     //PAGE_SPRITES_2, // Trainer Sprite, Kyledove
     PAGE_OW_OBJECTS, // OW Objects, Shahar, aveontrainer, 
     PAGE_FEATURE_BRANCH, // Feature Branch mid-battle evolution, ctf, zed, Shahar
@@ -267,7 +267,7 @@ static const u8 sCreditsText_TilemapStudio[]                  = _("Tilemap Studi
 
 static const u8 sCreditsText_OWTiles[]                        = _("OW Tiles");
 static const u8 sCreditsText_OWObjects[]                      = _("OW Objects");
-//static const u8 sCreditsText_Sprites[]                        = _("Sprites");
+static const u8 sCreditsText_Sprites[]                        = _("Sprites");
 static const u8 sCreditsText_BackgroundArt[]                  = _("Background Art");
 static const u8 sCreditsText_FeatureBranch[]                  = _("Feature Branch");
 static const u8 sCreditsText_BattleUI[]                       = _("Battle UI");
@@ -310,6 +310,7 @@ static const struct CreditsEntry sCreditsEntry_TilemapStudio                    
 
 static const struct CreditsEntry sCreditsEntry_OWTiles                          = {0,  TRUE, sCreditsText_OWTiles};
 static const struct CreditsEntry sCreditsEntry_OWObjects                        = {0,  TRUE, sCreditsText_OWObjects};
+static const struct CreditsEntry sCreditsEntry_Sprites                          = {0,  TRUE, sCreditsText_Sprites};
 static const struct CreditsEntry sCreditsEntry_BackgroundArt                    = {0,  TRUE, sCreditsText_BackgroundArt};
 static const struct CreditsEntry sCreditsEntry_FeatureBranch                    = {0,  TRUE, sCreditsText_FeatureBranch};
 static const struct CreditsEntry sCreditsEntry_BattleUI                         = {0,  TRUE, sCreditsText_BattleUI};
@@ -570,6 +571,13 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_BackgroundArt,
         &sCreditsEntry_Shahar,
         _,//&sCreditsEntry_kWharever,
+        _,
+        _
+    },
+    [PAGE_SPRITES] = {
+        &sCreditsEntry_Sprites,
+        &sCreditsEntry_Shahar,
+        &sCreditsEntry_aveontrainer,
         _,
         _
     },

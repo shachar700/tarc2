@@ -322,7 +322,7 @@ WoolooSnack_EventScript_2ndWoolooFacesNorth::
 	end
 
 WoolooSnack_EventScript_ObstagoonRestart::
-	lock
+	lockall
 	faceplayer
 	msgbox WoolooSnack_Text_ObstagoonRestart, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, WoolooSnack_EventScript_RockClimbDeclined
@@ -330,7 +330,7 @@ WoolooSnack_EventScript_ObstagoonRestart::
 	addmoney 1
 	warp MAP_WOOLOO_SNACK, 11, 5
 	waitstate
-	release
+	releaseall
 	end
 
 WoolooSnack_Movement_GoBackUp:

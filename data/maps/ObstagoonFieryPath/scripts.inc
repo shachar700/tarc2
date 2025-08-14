@@ -58,7 +58,7 @@ ObstagoonFieryPath_EventScript_Wooloo::
 
 ObstagoonFieryPath_Text_PickedPokeToy:
 	.string "Wooloo picked up the POKé TOY!\p"
-	.string "It made Hisui Growlithe excited.$"
+	.string "It made Hisuian Growlithe excited.$"
 
 ObstagoonFieryPath_Text_Completed:
 	.string "{FONT_SMALL}Stage 8 completed.$"

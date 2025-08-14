@@ -334,6 +334,12 @@ ObstagoonTemple_EventScript_FirewoodSign::
 	msgbox ObstagoonTemple_Text_FirewoodSign, MSGBOX_SIGN
 	end
 
+ObstagoonTemple_EventScript_LinooneBoulder::
+	lock
+	bufferspeciesname STR_VAR_1, SPECIES_LINOONE
+	goto WoolooPushes_EventScript_DogBoulder
+	end
+
 ObstagoonTemple_Text_FireSign:
 	.string "Cushion with a fire sign on top of it.$"
 
