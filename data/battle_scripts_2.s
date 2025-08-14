@@ -238,7 +238,29 @@ BattleScript_RunByUsingItem::
 BattleScript_ActionWatchesCarefully:
 	printstring STRINGID_PKMNWATCHINGCAREFULLY
 	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_ButItFailed
 	end2
+
+BattleScript_SwaySuccess::
+	printstring STRINGID_PKMNWATCHINGCAREFULLY
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_PKMNSWAYSUCCESS
+	waitmessage B_WAIT_TIME_LONG
+	unused_0x94
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_TARGET
+	moveendall
+	setbyte gBattleOutcome, B_OUTCOME_WON
+	end
 
 BattleScript_ActionGetNear:
 	printfromtable gSafariGetNearStringIds

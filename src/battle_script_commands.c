@@ -13050,6 +13050,9 @@ static void Cmd_tryKO(void)
 
 static void Cmd_unused_0x94(void)
 {
+    CMD_ARGS();
+    gBattleStruct->moveDamage[gBattlerTarget] = 32767;
+    gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 static void Cmd_copybidedmg(void)

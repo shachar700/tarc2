@@ -75,6 +75,7 @@ ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12_Floored(u32 percent);
 extern const u8 *const gBattlescriptsForRunningByItem[];
 extern const u8 *const gBattlescriptsForUsingItem[];
 extern const u8 *const gBattlescriptsForSafariActions[];
+extern const u8 BattleScript_SwaySuccess[];
 
 static const u8 sPkblToEscapeFactor[][3] = {
     {
@@ -733,10 +734,23 @@ void HandleAction_Run(void)
 }
 
 void HandleAction_WatchesCarefully(void)
-{
+{    
     gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
+
+
+    // 25% chance to succeed
+    if (Random() % 100 < 25)
+    {
+        // Success: jump to the success script.
+        // The script itself will handle setting HP to 0 and the animation.
+        gBattlescriptCurrInstr = BattleScript_SwaySuccess;
+        gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
+        return;
+    }
+
+    // Failure: jump to the failure script.
     gBattlescriptCurrInstr = gBattlescriptsForSafariActions[0];
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
