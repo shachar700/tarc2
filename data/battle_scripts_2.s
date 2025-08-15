@@ -240,27 +240,45 @@ BattleScript_ActionWatchesCarefully:
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_ButItFailed
 	end2
-
 BattleScript_SwaySuccess::
-	printstring STRINGID_PKMNWATCHINGCAREFULLY
-	waitmessage B_WAIT_TIME_LONG
-	printstring STRINGID_PKMNSWAYSUCCESS
-	waitmessage B_WAIT_TIME_LONG
-	unused_0x94
-	adjustdamage
-	attackanimation
-	waitanimation
-	effectivenesssound
-	hitanimation BS_TARGET
-	waitstate
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	resultmessage
-	waitmessage B_WAIT_TIME_LONG
-	tryfaintmon BS_TARGET
-	moveendall
-	setbyte gBattleOutcome, B_OUTCOME_WON
-	end
+    printstring STRINGID_PKMNWATCHINGCAREFULLY
+    waitmessage B_WAIT_TIME_LONG
+    printstring STRINGID_PKMNSWAYSUCCESS
+    waitmessage B_WAIT_TIME_LONG
+
+    unused_0x94
+    adjustdamage
+    attackanimation
+    waitanimation
+    effectivenesssound
+    hitanimation BS_OPPONENT1
+    waitstate
+    healthbarupdate BS_OPPONENT1
+    datahpupdate BS_OPPONENT1
+    resultmessage
+    waitmessage B_WAIT_TIME_LONG
+    tryfaintmon BS_OPPONENT1
+
+    jumpifnotbattletype BATTLE_TYPE_DOUBLE, BattleScript_SwaySuccessEnd
+    jumpifhasnohp BS_OPPONENT2, BattleScript_SwaySuccessEnd
+
+	addbyte gBattlerTarget, 2
+    adjustdamage
+    attackanimation
+    waitanimation
+    effectivenesssound
+    hitanimation BS_OPPONENT2
+    waitstate
+    healthbarupdate BS_OPPONENT2
+    datahpupdate BS_OPPONENT2
+    resultmessage
+    waitmessage B_WAIT_TIME_LONG
+    tryfaintmon BS_OPPONENT2
+
+BattleScript_SwaySuccessEnd:
+    moveendall
+    setbyte gBattleOutcome, B_OUTCOME_WON
+    end
 
 BattleScript_ActionGetNear:
 	printfromtable gSafariGetNearStringIds

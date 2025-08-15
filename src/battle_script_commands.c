@@ -13051,7 +13051,9 @@ static void Cmd_tryKO(void)
 static void Cmd_unused_0x94(void)
 {
     CMD_ARGS();
+    gBattlerTarget = 1; // first opponent battler
     gBattleStruct->moveDamage[gBattlerTarget] = 32767;
+    gBattleStruct->moveDamage[BATTLE_PARTNER(gBattlerTarget)] = 32767;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 

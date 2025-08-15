@@ -733,6 +733,7 @@ void HandleAction_Run(void)
     }
 }
 
+/*
 void HandleAction_WatchesCarefully(void)
 {    
     gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
@@ -751,6 +752,25 @@ void HandleAction_WatchesCarefully(void)
     }
 
     // Failure: jump to the failure script.
+    gBattlescriptCurrInstr = gBattlescriptsForSafariActions[0];
+    gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
+}*/
+
+void HandleAction_WatchesCarefully(void)
+{
+    u8 attacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
+
+    gBattlerAttacker = attacker;
+    gBattle_BG0_X = 0;
+    gBattle_BG0_Y = 0;
+
+    if ((Random() % 100) < 25)
+    {
+        gBattlescriptCurrInstr = BattleScript_SwaySuccess;
+        gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
+        return;
+    }
+
     gBattlescriptCurrInstr = gBattlescriptsForSafariActions[0];
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
