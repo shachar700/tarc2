@@ -733,29 +733,6 @@ void HandleAction_Run(void)
     }
 }
 
-/*
-void HandleAction_WatchesCarefully(void)
-{    
-    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
-    gBattle_BG0_X = 0;
-    gBattle_BG0_Y = 0;
-
-
-    // 25% chance to succeed
-    if (Random() % 100 < 25)
-    {
-        // Success: jump to the success script.
-        // The script itself will handle setting HP to 0 and the animation.
-        gBattlescriptCurrInstr = BattleScript_SwaySuccess;
-        gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
-        return;
-    }
-
-    // Failure: jump to the failure script.
-    gBattlescriptCurrInstr = gBattlescriptsForSafariActions[0];
-    gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
-}*/
-
 void HandleAction_WatchesCarefully(void)
 {
     u8 attacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
