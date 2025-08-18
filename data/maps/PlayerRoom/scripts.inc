@@ -20,10 +20,11 @@ PlayerRoom_EventScript_StartScene::
 	lockall
 	msgbox PlayerRoom_Text_Dream, MSGBOX_DEFAULT
 	togglegender
+	special EnableNationalPokedex
 	givemon species=SPECIES_WOOLOO, level=20
 	givemon species=SPECIES_WOOLOO, level=20, isShiny=TRUE
 	givemon species=SPECIES_ZIGZAGOON, level=20
-	givemon species=SPECIES_ZIGZAGOON_GALAR, level=20
+	givemon species=SPECIES_WOOLOO, level=20
 	closemessage
 	special GameClear
 	waitstate
@@ -31,7 +32,9 @@ PlayerRoom_EventScript_StartScene::
 	end
 
 PlayerRoom_Text_Dream:
-	.string "Huh? Was it all a dream?\n"
-	.string "… … …\p"
-	.string "What was that all about?\n"
-	.string "… … …$"
+	.string "Huh? … … …\n"
+	.string "Was it all a dream? … … …\p"
+	.string "MOM! Your fable story got so vivid!\n"
+	.string "I was living your fairy tale.\p"
+	.string "I wonder if I can make my experience\n"
+	.string "faster and flawless…$"

@@ -10,6 +10,8 @@ WoolooSnack_OnFrame:
 
 WoolooSnack_EventScript_Completed:
 	lock
+	waitse
+	playse SE_SUCCESS
 	msgbox WoolooSnack_Text_Completed, MSGBOX_AUTOCLOSE
 	clearflag FLAG_SYS_B_DASH
 	clearflag FLAG_SYS_POKEMON_GET

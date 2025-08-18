@@ -68,6 +68,7 @@ enum
     MENU_ACTION_PYRAMID_BAG,
     MENU_ACTION_DEBUG,
     MENU_ACTION_DEXNAV,
+    MENU_ACTION_TIP,
 };
 
 // Save status
@@ -110,6 +111,8 @@ static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuDexNavCallback(void);
+//s7 tip
+static bool8 StartMenuTipCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -205,6 +208,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
     [MENU_ACTION_DEBUG]           = {sText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
     [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = StartMenuDexNavCallback}},
+    [MENU_ACTION_TIP]             = {gText_MenuTip,     {.u8_void = StartMenuTipCallback}},
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -338,13 +342,15 @@ static void BuildNormalStartMenu(void)
 
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
-
+    
     //AddStartMenuAction(MENU_ACTION_BAG);
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKENAV);
 
     AddStartMenuAction(MENU_ACTION_PLAYER);
+    if (FlagGet(FLAG_UNUSED_0x881) == TRUE)
+        AddStartMenuAction(MENU_ACTION_TIP);
     AddStartMenuAction(MENU_ACTION_SAVE);
     //AddStartMenuAction(MENU_ACTION_OPTION);
     AddStartMenuAction(MENU_ACTION_EXIT);
@@ -651,7 +657,8 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
-            && gMenuCallback != StartMenuBattlePyramidRetireCallback)
+            && gMenuCallback != StartMenuBattlePyramidRetireCallback
+            && gMenuCallback != StartMenuTipCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -1496,6 +1503,105 @@ static bool8 StartMenuDexNavCallback(void)
 {
     CreateTask(Task_OpenDexNavFromStartMenu, 0);
     return TRUE;
+}
+
+extern const u8 WoolooPasture_Tip[];
+
+static bool8 StartMenuTipCallback(void)
+{
+    ClearStdWindowAndFrame(GetStartMenuWindowId(), FALSE);
+    RemoveStartMenuWindow();
+    LockPlayerFieldControls();
+
+    // Don't run while fading (same pattern as other callbacks in this file)
+    if (!gPaletteFade.active)
+    {
+        // Only set up the script once
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_WOOLOO_PASTURE)
+            && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_WOOLOO_PASTURE))
+        {
+            VarSet(VAR_0x8008, 1);
+            ScriptContext_SetupScript(WoolooPasture_Tip);
+        }
+        else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_OBSTAGOON_RUNAWAY)
+                 && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_OBSTAGOON_RUNAWAY))
+        {
+            VarSet(VAR_0x8008, 2);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_OBSTAGOON_CHASES)
+                 && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_OBSTAGOON_CHASES))
+        {
+            VarSet(VAR_0x8008, 3);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_WOOLOO_PUSHES)
+                 && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_WOOLOO_PUSHES))
+        {
+            VarSet(VAR_0x8008, 4);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_WOOLOO_PASTURE_2)
+                 && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_WOOLOO_PASTURE_2))
+        {
+            VarSet(VAR_0x8008, 5);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_OBSTAGOON_BLOCKADE)
+                 && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_OBSTAGOON_BLOCKADE))
+        {
+            VarSet(VAR_0x8008, 6);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_WOOLOO_SNACK)
+                 && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_WOOLOO_SNACK))
+        {
+            VarSet(VAR_0x8008, 7);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_OBSTAGOON_FIERY_PATH)
+                 && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_OBSTAGOON_FIERY_PATH))
+        {
+            VarSet(VAR_0x8008, 8);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else if (   
+        (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_NORTHWEST_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_NORTHWEST_2))) ||
+    
+       (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_NORTH_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_NORTH_2))) ||
+        
+         (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_SOUTHWEST_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_SOUTHWEST_2))) ||
+
+     (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_SOUTH_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_SOUTH_2))) ||
+
+     (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_NORTHEAST_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_NORTHEAST_2))) ||
+
+     (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_SOUTHEAST_2)
+        && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_SOUTHEAST_2)))    )
+        {
+            VarSet(VAR_0x8008, 9);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_OBSTAGOON_TEMPLE)
+                 && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_OBSTAGOON_TEMPLE))
+        {
+            VarSet(VAR_0x8008, 10);
+            ScriptContext_SetupScript(WoolooPasture_Tip); // use correct script for this map
+        }
+        else
+        {
+            ScriptContext_SetupScript(WoolooPasture_Tip); // optional fallback
+        }
+
+        // Return TRUE so the menu system stops calling this callback repeatedly.
+        return TRUE;
+    }
+    return FALSE;
 }
 
 void Script_ForceSaveGame(struct ScriptContext *ctx)

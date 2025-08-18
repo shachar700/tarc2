@@ -29,6 +29,8 @@ WoolooPasture_OnFrame:
 	.2byte 0
 
 WoolooPasture_EventScript_Completed:
+	waitse
+	playse SE_SUCCESS
 	msgbox WoolooPasture_Text_Completed, MSGBOX_AUTOCLOSE
 	togglegender
 	clearflag FLAG_SYS_B_DASH
@@ -73,6 +75,7 @@ WoolooPasture_EventScript_Trigger_WoolooPanic::
 	setobjectxyperm LOCALID_SHINY_WOOLOO, 8, 6
 	setobjectmovementtype LOCALID_SHINY_WOOLOO, MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE
 	addvar VAR_WOOLOO_PASTURE_STATE, 1
+	setflag FLAG_UNUSED_0x881
 	release
 	end
 
@@ -172,6 +175,117 @@ WoolooPasture_EventScript_RightWooloo::
 	special HealPlayerParty
 	release
 	end
+
+WoolooPasture_Tip::
+	switch VAR_0x8008
+	case 1, WoolooPasture_EventScript_Tip1
+	case 2, WoolooPasture_EventScript_Tip2
+	case 3, WoolooPasture_EventScript_Tip3
+	case 4, WoolooPasture_EventScript_Tip4
+	case 5, WoolooPasture_EventScript_Tip5
+	case 6, WoolooPasture_EventScript_Tip6
+	case 7, WoolooPasture_EventScript_Tip7
+	case 8, WoolooPasture_EventScript_Tip8
+	case 9, WoolooPasture_EventScript_Tip9
+	case 10, WoolooPasture_EventScript_Tip10
+	msgbox WoolooPastureTip_Text_Generic, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip1:
+	msgbox WoolooPasture_Text_Tip1, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip2:
+	msgbox WoolooPasture_Text_Tip2, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip3:
+	msgbox WoolooPasture_Text_Tip3, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip4:
+	msgbox WoolooPasture_Text_Tip4, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip5:
+	msgbox WoolooPasture_Text_Tip5, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip6:
+	msgbox WoolooPasture_Text_Tip6, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip7:
+	msgbox WoolooPasture_Text_Tip7, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip8:
+	msgbox WoolooPasture_Text_Tip8, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip9:
+	msgbox WoolooPasture_Text_Tip9, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_EventScript_Tip10:
+	msgbox WoolooPasture_Text_Tip10, MSGBOX_DEFAULT
+	release
+	end
+
+WoolooPasture_Text_Tip1:
+	.string "Stage 1: Wooloo Pasture\n"
+	.string "Tip: Chase all 3 Wooloo.$"
+
+WoolooPasture_Text_Tip2:
+	.string "Stage 2: Obstagoon Runaway\n"
+	.string "Tip: Check patterns and avoid Obstagoon.$"
+
+WoolooPasture_Text_Tip3:
+	.string "Stage 3: Obstagoon Chases\n"
+	.string "Tip: Corner the Wooloo.$"
+
+WoolooPasture_Text_Tip4:
+	.string "Stage 4: Wooloo Pushes\n"
+	.string "Tip: Block Obstagoon sight using Dogs.$"
+
+WoolooPasture_Text_Tip5:
+	.string "Stage 5: Wooloo Pasture 2\n"
+	.string "Tip: Chase all 3 Wooloo.$"
+
+WoolooPasture_Text_Tip6:
+	.string "Stage 6: Obstagoon Blockade\n"
+	.string "Tip: Dog can be pushed over cracked ice.$"
+
+WoolooPasture_Text_Tip7:
+	.string "Stage 7: Wooloo Snack\n"
+	.string "Tip: Be careful when you drop a ledge.$"
+
+WoolooPasture_Text_Tip8:
+	.string "Stage 8: Obstagoon Fiery Path\n"
+	.string "Tip: Push dogs to clear a path.$"
+
+WoolooPasture_Text_Tip9:
+	.string "Stage 9: Safari Zone\n"
+	.string "Tip: Each section has 1 Wooloo,\p"
+	.string "Familiarize yourself with the safari\n"
+	.string "and the Wooloo locations.$"
+
+WoolooPasture_Text_Tip10:
+	.string "Stage 10: Obstagoon Temple\n"
+	.string "Tip: Watch patterns and don't rush.$"
+
+WoolooPastureTip_Text_Generic:
+	.string "Tip: Do not give up friends for foes.$"
 
 WoolooPasture_Text_Completed:
 	.string "{FONT_SMALL}Stage 1 completed.$"

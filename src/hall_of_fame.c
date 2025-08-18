@@ -727,6 +727,7 @@ static void Task_Hof_WaitAndPrintPlayerInfo(u8 taskId)
         DrawDialogueFrame(0, FALSE);
         ConvertIntToDecimalStringN(gStringVar1, GetMoney(&gSaveBlock1Ptr->money), STR_CONV_MODE_LEFT_ALIGN, 6);
         ConvertIntToDecimalStringN(gStringVar2, VarGet(VAR_TWO_RESTART_COUNTER), STR_CONV_MODE_LEFT_ALIGN, 6);
+        ConvertIntToDecimalStringN(gStringVar3, VarGet(VAR_OBSTAGOON_STEPS_COUNTER), STR_CONV_MODE_LEFT_ALIGN, 6);
         StringExpandPlaceholders(gStringVar4, gText_LeagueChamp);
         AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
         CopyWindowToVram(0, COPYWIN_FULL);

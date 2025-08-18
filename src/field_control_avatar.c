@@ -798,7 +798,7 @@ static void UpdateObstagoonStepCounter(void)
         return;
 
     (*ptr)++;
-    (*ptr) %= 700;
+    (*ptr) %= 750;
     if (*ptr == 0)
     {
         VarSet(VAR_OBSTAGOON_STEPS_COUNTER, 0);

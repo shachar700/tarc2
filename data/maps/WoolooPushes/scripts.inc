@@ -130,6 +130,8 @@ WoolooPushes_EventScript_ShinyWooloo::
 	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
 	delay 40
 	waitmoncry
+	waitse
+	playse SE_SUCCESS
 	msgbox WoolooPushes_Text_Completed, MSGBOX_AUTOCLOSE
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_POKEMON_GET

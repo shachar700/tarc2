@@ -9923,8 +9923,8 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 
 #if P_FAMILY_ZIGZAGOON
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Zigzagoon[] = INCBIN_U32("graphics/pokemon/zigzagoon/anim_front.4bpp.lz");
-    const u16 gMonPalette_Zigzagoon[] = INCBIN_U16("graphics/pokemon/zigzagoon/normal.gbapal");
+    const u32 gMonFrontPic_Zigzagoon[] = INCBIN_U32("graphics/pokemon/zigzagoon/anim_front_gba.4bpp.lz"); //anim_front
+    const u16 gMonPalette_Zigzagoon[] = INCBIN_U16("graphics/pokemon/zigzagoon/normal_gba.gbapal"); //normal
     const u32 gMonBackPic_Zigzagoon[] = INCBIN_U32("graphics/pokemon/zigzagoon/back.4bpp.lz");
     const u16 gMonShinyPalette_Zigzagoon[] = INCBIN_U16("graphics/pokemon/zigzagoon/shiny.gbapal");
 #else

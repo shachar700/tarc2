@@ -22,15 +22,7 @@ ObstagoonTemple_RemoveFireCushion:
 	delay 30
 	waitse
 	playse SE_FU_ZAKU
-	removeobject 10
-	removeobject 1
-	removeobject 5
-	removeobject 15
-	removeobject 16
-	removeobject 17
-	removeobject 18
-	removeobject 19
-	removeobject 20
+	call ObstagoonTemple_RemoveCushionObject
 	delay 60
 	setvar VAR_GIFT_UNUSED_3, 0
 	warpsilent MAP_OBSTAGOON_TEMPLE, VAR_GIFT_UNUSED_1, VAR_GIFT_UNUSED_2
@@ -38,12 +30,73 @@ ObstagoonTemple_RemoveFireCushion:
 	release
 	end
 
+ObstagoonTemple_RemoveCushionObject::
+	switch VAR_GIFT_UNUSED_4
+	case 1, ObstagoonTemple_RemoveCushionObjectFire1
+	case 2, ObstagoonTemple_RemoveCushionObjectFire2
+	case 3, ObstagoonTemple_RemoveCushionObjectFire3
+	case 4, ObstagoonTemple_RemoveCushionObjectFire4
+	case 5, ObstagoonTemple_RemoveCushionObjectFire5
+	case 6, ObstagoonTemple_RemoveCushionObjectFire6
+	case 7, ObstagoonTemple_RemoveCushionObjectFire7
+	case 8, ObstagoonTemple_RemoveCushionObjectFire8
+	case 9, ObstagoonTemple_RemoveCushionObjectFire9
+	end
+
+ObstagoonTemple_RemoveCushionObjectFire1:
+	removeobject 10
+	setflag FLAG_DECORATION_7
+	return
+
+ObstagoonTemple_RemoveCushionObjectFire2:
+	removeobject 1
+	setflag FLAG_DECORATION_8
+	return
+
+ObstagoonTemple_RemoveCushionObjectFire3:
+	removeobject 5
+	setflag FLAG_DECORATION_9
+	return
+
+ObstagoonTemple_RemoveCushionObjectFire4:
+	removeobject 15
+	setflag FLAG_DECORATION_10
+	return
+
+ObstagoonTemple_RemoveCushionObjectFire5:
+	removeobject 16
+	setflag FLAG_DECORATION_11
+	return
+
+ObstagoonTemple_RemoveCushionObjectFire6:
+	removeobject 17
+	setflag FLAG_DECORATION_12
+	return
+
+ObstagoonTemple_RemoveCushionObjectFire7:
+	removeobject 18
+	setflag FLAG_DECORATION_13
+	return
+
+ObstagoonTemple_RemoveCushionObjectFire8:
+	removeobject 19
+	setflag FLAG_DECORATION_14
+	return
+
+ObstagoonTemple_RemoveCushionObjectFire9:
+	removeobject 20
+	setflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1
+	return
+
+
 ObstagoonTemple_Eventscript_EntranceOpened:
 	lock
 	msgbox ObstagoonTemple_Text_EntranceOpened, MSGBOX_DEFAULT
 	closemessage
 	addvar VAR_OBSTAGOON_TEMPLE_BUTTONS_PRESSED, 1
-	setobjectmovementtype 22, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxy 22, 31, 10
+	setobjectxyperm 22, 31, 10
+	setobjectmovementtype 22, MOVEMENT_TYPE_ROTATE_CLOCKWISE
 	call ObstagoonTemple_PutExitTiles
 	release
 	end
@@ -80,7 +133,7 @@ ObstagoonTemple_OnLoad:
 	end
 
 ObstagoonTemple_ObstagoonRotates:
-	setobjectyxy LOCALID_MY_OBSTAGOON_GUARD, 47, 41
+	setobjectxy LOCALID_MY_OBSTAGOON_GUARD, 47, 41
 	setobjectxyperm LOCALID_MY_OBSTAGOON_GUARD, 47, 41
 	setobjectmovementtype LOCALID_MY_OBSTAGOON_GUARD, MOVEMENT_TYPE_ROTATE_CLOCKWISE
 	return
@@ -151,6 +204,7 @@ ObstagoonTemple_Trigger_LeftButton::
 	setflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4
 	setvar VAR_TEMP_0, 1
 	addvar VAR_OBSTAGOON_TEMPLE_BUTTONS_PRESSED, 1
+	msgbox ObstagoonTemple_Text_TileSwitchON, MSGBOX_AUTOCLOSE
 	release
 	end
 
@@ -163,6 +217,7 @@ ObstagoonTemple_Trigger_LeftButton2::
 	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4
 	subvar VAR_OBSTAGOON_TEMPLE_BUTTONS_PRESSED, 1
 	setvar VAR_TEMP_0, 0
+	msgbox ObstagoonTemple_Text_TileSwitchOFF, MSGBOX_AUTOCLOSE
 	release
 	end
 
@@ -175,6 +230,7 @@ ObstagoonTemple_Trigger_RightButton::
 	setflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5
 	addvar VAR_OBSTAGOON_TEMPLE_BUTTONS_PRESSED, 1
 	setvar VAR_TEMP_1, 1
+	msgbox ObstagoonTemple_Text_TileSwitchON, MSGBOX_AUTOCLOSE
 	release
 	end
 
@@ -187,6 +243,7 @@ ObstagoonTemple_Trigger_RightButton2::
 	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5
 	subvar VAR_OBSTAGOON_TEMPLE_BUTTONS_PRESSED, 1
 	setvar VAR_TEMP_1, 0
+	msgbox ObstagoonTemple_Text_TileSwitchOFF, MSGBOX_AUTOCLOSE
 	release
 	end
 
@@ -215,9 +272,9 @@ ObstagoonTemple_EventScript_Fire1::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 1
 	warpsilent MAP_OBSTAGOON_TEMPLE, 4, 32
 	waitstate
-	setflag FLAG_DECORATION_7
 	release
 	end
 
@@ -231,9 +288,9 @@ ObstagoonTemple_EventScript_Fire2::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 2
 	warpsilent MAP_OBSTAGOON_TEMPLE, 41, 41
 	waitstate
-	setflag FLAG_DECORATION_8
 	release
 	end
 
@@ -247,9 +304,9 @@ ObstagoonTemple_EventScript_Fire3::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 3
 	warpsilent MAP_OBSTAGOON_TEMPLE, 13, 20
 	waitstate
-	setflag FLAG_DECORATION_9
 	release
 	end
 
@@ -263,9 +320,9 @@ ObstagoonTemple_EventScript_Fire4::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 4
 	warpsilent MAP_OBSTAGOON_TEMPLE, 43, 27
 	waitstate
-	setflag FLAG_DECORATION_10
 	release
 	end
 
@@ -279,9 +336,9 @@ ObstagoonTemple_EventScript_Fire5::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 5
 	warpsilent MAP_OBSTAGOON_TEMPLE, 19, 6
 	waitstate
-	setflag FLAG_DECORATION_11
 	release
 	end
 
@@ -295,9 +352,9 @@ ObstagoonTemple_EventScript_Fire6::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 6
 	warpsilent MAP_OBSTAGOON_TEMPLE, 20, 34
 	waitstate
-	setflag FLAG_DECORATION_12
 	release
 	end
 
@@ -311,9 +368,9 @@ ObstagoonTemple_EventScript_Fire7::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 7
 	warpsilent MAP_OBSTAGOON_TEMPLE, 29, 6
 	waitstate
-	setflag FLAG_DECORATION_13
 	release
 	end
 
@@ -327,9 +384,9 @@ ObstagoonTemple_EventScript_Fire8::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 8
 	warpsilent MAP_OBSTAGOON_TEMPLE, 20, 21
 	waitstate
-	setflag FLAG_DECORATION_14
 	release
 	end
 
@@ -343,9 +400,9 @@ ObstagoonTemple_EventScript_Fire9::
 	msgbox ObstagoonTemple_Text_FirePutOut, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GIFT_UNUSED_3, 1
+	setvar VAR_GIFT_UNUSED_4, 9
 	warpsilent MAP_OBSTAGOON_TEMPLE, 32, 15
 	waitstate
-	setflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1
 	release
 	end
 
@@ -360,12 +417,16 @@ ObstagoonTemple_EventScript_Alert::
 	playmoncry SPECIES_OBSTAGOON, CRY_MODE_NORMAL
 	delay 40
 	waitmoncry
+	applymovement LOCALID_MY_OBSTAGOON_GUARD, Common_Movement_FaceUp
+	waitmovement 0
 	addvar VAR_OBSTAGOON_ALERT, 1
 	release
 	end
 
 ObstagoonTemple_EventScript_Completed::
 	lock
+	waitse
+	playse SE_SUCCESS
 	msgbox ObstagoonTemple_Text_Completed, MSGBOX_DEFAULT
 	setmetatile 24, 7, 0x201, TRUE
 	special DrawWholeMapView
@@ -397,6 +458,12 @@ ObstagoonTemple_EventScript_LinooneBoulder::
 	goto WoolooPushes_EventScript_DogBoulder
 	end
 
+ObstagoonTemple_EventScript_PoochyenaBoulder::
+	lock
+	bufferspeciesname STR_VAR_1, SPECIES_POOCHYENA
+	goto WoolooPushes_EventScript_DogBoulder
+	end
+
 ObstagoonTemple_Text_FireSign:
 	.string "Cushion with a fire sign on top of it.$"
 
@@ -414,3 +481,9 @@ ObstagoonTemple_Text_EntranceOpened:
 
 ObstagoonTemple_Text_Completed:
 	.string "{FONT_SMALL}Stage 10 completed.$"
+
+ObstagoonTemple_Text_TileSwitchON:
+	.string "Tile switch ON.$"
+
+ObstagoonTemple_Text_TileSwitchOFF:
+	.string "Tile switch OFF.$"

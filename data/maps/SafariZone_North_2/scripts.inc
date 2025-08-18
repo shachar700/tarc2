@@ -43,6 +43,8 @@ SafariZone_EventScript_RanAwayFromWooloo::
 
 SafariZone_North_2_EventScript_Completed::
 	lock
+	waitse
+	playse SE_SUCCESS
 	buffernumberstring STR_VAR_1, VAR_OBSTAGOON_STEPS_COUNTER
 	msgbox SafariZone_North_2_Text_Completed, MSGBOX_AUTOCLOSE
 	clearflag FLAG_SYS_B_DASH
@@ -75,6 +77,8 @@ SafariZone_North_2_EventScript_StepsCounter::
 
 EventScript_WarpBackToSafariZone::
 	lock
+	waitse
+	playse SE_FAILURE
 	msgbox SafariZone_North_2_Text_WarpBack, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
@@ -86,15 +90,15 @@ EventScript_WarpBackToSafariZone::
 
 SafariZone_North_2_Text_Start:
 	.string "Stage 9: Defeat all Wooloo in fewer\n"
-	.string "than 700 steps.$"
+	.string "than 750 steps.$"
 
 SafariZone_North_2_Text_WarpBack:
 	.string "Stage 9 failed.\n"
-	.string "Reached 700 steps.$"
+	.string "Reached 750 steps.$"
 
 SafariZone_North_2_Text_StepsCounter:
-	.string "Steps: {STR_VAR_1}/700$"
+	.string "Steps: {STR_VAR_1}/750$"
 
 SafariZone_North_2_Text_Completed:
 	.string "{FONT_SMALL}Stage 9 completed.\n"
-	.string "Steps: {STR_VAR_1}/700$"
+	.string "Steps: {STR_VAR_1}/750$"

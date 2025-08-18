@@ -23,6 +23,8 @@ ObstagoonRunaway_EventScript_Wooloo::
 	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
 	delay 40
 	waitmoncry
+	waitse
+	playse SE_SUCCESS
 	msgbox ObstagoonRunaway_Text_Completed, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SYS_B_DASH
