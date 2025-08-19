@@ -276,9 +276,7 @@ WoolooPasture_Text_Tip8:
 
 WoolooPasture_Text_Tip9:
 	.string "Stage 9: Safari Zone\n"
-	.string "Tip: Each section has 1 Wooloo,\p"
-	.string "Familiarize yourself with the safari\n"
-	.string "and the Wooloo locations.$"
+	.string "Tip: Each map has 1 Wooloo.$"
 
 WoolooPasture_Text_Tip10:
 	.string "Stage 10: Obstagoon Temple\n"

@@ -54,15 +54,7 @@
       "flag": "0"
     }
   ],
-  "warp_events": [
-    {
-      "x": 47,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_OBSTAGOON_BLOCKADE",
-      "dest_warp_id": "0"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }
