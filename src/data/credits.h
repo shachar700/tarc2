@@ -15,6 +15,8 @@ enum
     PAGE_SPRITES, // Trainer Sprite, Shahar, Dragonflye, Dante, Baro
     //PAGE_SPRITES_2, // Trainer Sprite, Kyledove
     PAGE_OW_OBJECTS, // OW Objects, Shahar, aveontrainer, 
+    PAGE_COMPOSER, // Composer, Karl
+    PAGE_PLAYTESTER, // Playtester, Aio
     PAGE_FEATURE_BRANCH, // Feature Branch mid-battle evolution, ctf, zed, Shahar
     PAGE_SUPPORT, // Support, TAH, Maya
     PAGE_SPECIAL_THANKS, // Special Thanks
@@ -268,10 +270,12 @@ static const u8 sCreditsText_TilemapStudio[]                  = _("Tilemap Studi
 static const u8 sCreditsText_OWTiles[]                        = _("OW Tiles");
 static const u8 sCreditsText_OWObjects[]                      = _("OW Objects");
 static const u8 sCreditsText_Sprites[]                        = _("Sprites");
+static const u8 sCreditsText_Composer[]                       = _("Composer");
 static const u8 sCreditsText_BackgroundArt[]                  = _("Background Art");
 static const u8 sCreditsText_FeatureBranch[]                  = _("Feature Branch");
 static const u8 sCreditsText_BattleUI[]                       = _("Battle UI");
 static const u8 sCreditsText_Support[]                        = _("Support");
+static const u8 sCreditsText_Playtester[]                     = _("Playtesters");
 static const u8 sCreditsText_SpecialThanks[]                  = _("Special Thanks");
 
 static const u8 sCreditsText_aveontrainer[]                   = _("aveontrainer"); // obj gfx
@@ -280,6 +284,9 @@ static const u8 sCreditsText_kWharever[]                      = _("kWharever"); 
 static const u8 sCreditsText_LeoB[]                           = _("LeoB"); // ow tiles
 static const u8 sCreditsText_Nico[]                           = _("Nico"); // battle ui
 static const u8 sCreditsText_Archie[]                         = _("Archie"); // battle ui
+
+static const u8 sCreditsText_Karl[]                         = _("Karl"); // composer
+static const u8 sCreditsText_Aio[]                         = _("Aioe"); // playtester
 
 static const u8 sCreditsText_AquasHideout[]                   = _("Team Aqua's Hideout Crew"); // support
 static const u8 sCreditsText_Maya[]                           = _("Maya"); // special thanks
@@ -312,9 +319,11 @@ static const struct CreditsEntry sCreditsEntry_OWTiles                          
 static const struct CreditsEntry sCreditsEntry_OWObjects                        = {0,  TRUE, sCreditsText_OWObjects};
 static const struct CreditsEntry sCreditsEntry_Sprites                          = {0,  TRUE, sCreditsText_Sprites};
 static const struct CreditsEntry sCreditsEntry_BackgroundArt                    = {0,  TRUE, sCreditsText_BackgroundArt};
+static const struct CreditsEntry sCreditsEntry_Composer                         = {0,  TRUE, sCreditsText_Composer};
 static const struct CreditsEntry sCreditsEntry_FeatureBranch                    = {0,  TRUE, sCreditsText_FeatureBranch};
 static const struct CreditsEntry sCreditsEntry_BattleUI                         = {0,  TRUE, sCreditsText_BattleUI};
 static const struct CreditsEntry sCreditsEntry_Support                          = {0,  TRUE, sCreditsText_Support};
+static const struct CreditsEntry sCreditsEntry_Playtester                       = {0,  TRUE, sCreditsText_Playtester};
 static const struct CreditsEntry sCreditsEntry_SpecialThanks                    = {0,  TRUE, sCreditsText_SpecialThanks};
 
 static const struct CreditsEntry sCreditsEntry_Shahar                           = {0,  FALSE, sCreditsText_Shahar};
@@ -325,6 +334,8 @@ static const struct CreditsEntry sCreditsEntry_Xencleamas                       
 static const struct CreditsEntry sCreditsEntry_LeoB                             = {0,  FALSE, sCreditsText_LeoB};
 static const struct CreditsEntry sCreditsEntry_Nico                             = {0,  FALSE, sCreditsText_Nico};
 static const struct CreditsEntry sCreditsEntry_Archie                           = {0,  FALSE, sCreditsText_Archie};
+static const struct CreditsEntry sCreditsEntry_Karl                             = {0,  FALSE, sCreditsText_Karl};
+static const struct CreditsEntry sCreditsEntry_Aio                              = {0,  FALSE, sCreditsText_Aio};
 static const struct CreditsEntry sCreditsEntry_kWharever                        = {0,  FALSE, sCreditsText_kWharever};
 static const struct CreditsEntry sCreditsEntry_AquasHideout                     = {0,  FALSE, sCreditsText_AquasHideout};
 
@@ -588,6 +599,13 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         _,
         _
     },
+    [PAGE_COMPOSER] = {
+        &sCreditsEntry_Composer,
+        &sCreditsEntry_Karl,
+        _,
+        _,
+        _
+    },
     [PAGE_FEATURE_BRANCH] = {
         &sCreditsEntry_FeatureBranch,
         &sCreditsEntry_BattleUI,
@@ -600,6 +618,13 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_Support,
         &sCreditsEntry_AquasHideout,
         &sCreditsEntry_Maya,
+        _
+    },
+        [PAGE_PLAYTESTER] = {
+        &sCreditsEntry_Playtester,
+        &sCreditsEntry_Shahar,
+        &sCreditsEntry_Aio,
+        _,
         _
     },
     [PAGE_SPECIAL_THANKS] = {
