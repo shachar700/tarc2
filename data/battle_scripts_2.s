@@ -276,6 +276,8 @@ BattleScript_SwaySuccess::
     tryfaintmon BS_OPPONENT2
 
 BattleScript_SwaySuccessEnd:
+	setbyte sGIVEEXP_STATE, 0
+	getexp BS_TARGET
     moveendall
     setbyte gBattleOutcome, B_OUTCOME_WON
     end
