@@ -6,7 +6,7 @@ voicegroupslowstrings:: @ 8676AC0
 
 	.align 2
 voicegroup191::
-	voice_keysplit voicegroup005, KeySplitTable1 @ piano
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano @ piano
 	voice_directsound 60, 0, DirectSoundWaveData_steinway_b_piano, 255, 165, 103, 235
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ electric grand
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ honky tonk
@@ -54,19 +54,19 @@ voicegroup191::
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 216, 0, 165
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 246, 0, 235
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 165, 154, 235 @ several different versions are in use
-	voice_keysplit voicegroup006, KeySplitTable2 @ string ensemble
-	voice_keysplit voicegroupslowstrings, KeySplitTable2 @ string ensemble 2
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings @ string ensemble
+	voice_keysplit voicegroupslowstrings, keysplit_strings @ string ensemble 2
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ soon to be synth strings
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ synth strings 2
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 128, 165, 128, 188 @ there are other versions
 	voice_directsound 60, 0, DirectSoundWaveData_unknown_female_voice, 128, 165, 128, 204 @ ooh
 	voice_directsound 60, 0, synth_voice, 128, 165, 128, 204 @ soon to be synth voice
 	voice_directsound 60, 0, orchestrahit72, 200, 255, 255, 255 @ not sure about envelope values
-	voice_keysplit voicegroup007, KeySplitTable3 @ trumpet
-	voice_keysplit voicegroup008, KeySplitTable4 @ trombone
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet @ trumpet
+	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba @ trombone
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_french_horn_60, 255, 0, 224, 165 @ tuba
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ muted trumpet
-	voice_keysplit voicegroup009, KeySplitTable5 @ french horn
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn @ french horn
 	voice_directsound 60, 0, brass_section, 255, 0, 224, 165 @ brass section
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ synth brass 1
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ synth brass 2
@@ -102,7 +102,7 @@ voicegroup191::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ Pad 6  ↑ Add in via directsound? Via 8-bit?
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ Pad 7  Not in sounfont
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ Pad 8  Not in soundfont
-	voice_keysplit_all voicegroup002 @ percussion 96
+	voice_keysplit_all voicegroup_frlg_drumset @ percussion 96
 	voice_directsound 60, 0, rain, 255, 254, 0, 150 @ FX 1
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ FX 2
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 @ FX 3

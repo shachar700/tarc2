@@ -2650,23 +2650,12 @@ static void PrintBattlerOnAbilityPopUp(u8 battler, u8 spriteId1, u8 spriteId2)
     if (lastChar != CHAR_S && lastChar != CHAR_s)
         StringAppend(gStringVar1, COMPOUND_STRING("s"));
 
-<<<<<<< HEAD
-    textPtr[0] = EOS;
-
-    PrintOnAbilityPopUp((const u8 *)monName,
-                        (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32),
-                        (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32),
-                        5, 12,
-                        0,
-                        6, 9, 1);
-=======
     PrintOnAbilityPopUp(gStringVar1,
                         (void *)(OBJ_VRAM0) + TILE_OFFSET_4BPP(gSprites[spriteId1].oam.tileNum),
                         (void *)(OBJ_VRAM0) + TILE_OFFSET_4BPP(gSprites[spriteId2].oam.tileNum),
                         0, 0,
                         ABILITY_POP_UP_BATTLER_BG_TXTCLR, ABILITY_POP_UP_BATTLER_FG_TXTCLR, ABILITY_POP_UP_BATTLER_SH_TXTCLR,
                         TRUE, gSprites[spriteId1].sBattlerId);
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 }
 
 static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)

@@ -247,8 +247,7 @@ BattleScript_SwaySuccess::
     waitmessage B_WAIT_TIME_LONG
     printstring STRINGID_PKMNSWAYSUCCESS
     waitmessage B_WAIT_TIME_LONG
-
-    unused_0x94
+    unused_0x9f
     adjustdamage
     attackanimation
     waitanimation
