@@ -834,8 +834,10 @@
 	.4byte \failInstr
 	.endm
 
-	.macro unused_0x94
+	.macro checknonvolatiletrigger nonVolatile:req, failInstr:req
 	.byte 0x94
+	.2byte \nonVolatile
+	.4byte \failInstr
 	.endm
 
 	.macro copybidedmg
@@ -1438,9 +1440,8 @@
 	callnative BS_TryRevertWeatherForm
 	.endm
 
-	.macro trysetoctolock battler:req, failInstr:req
+	.macro trysetoctolock failInstr:req
 	callnative BS_TrySetOctolock
-	.byte \battler
 	.4byte \failInstr
 	.endm
 
@@ -1527,14 +1528,8 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro jumpifmovepropertyargument argument:req, jumpInstr:req
-	callnative BS_JumpIfMovePropertyArgument
-	.byte \argument
-	.4byte \jumpInstr
-	.endm
-
-	.macro setremoveterrain failInstr:req
-	callnative BS_SetRemoveTerrain
+	.macro setterrain failInstr:req
+	callnative BS_SetTerrain
 	.4byte \failInstr
 	.endm
 
@@ -1741,6 +1736,10 @@
 	callnative BS_ActivateTerrainChangeAbilities
 	.byte \battler
 	.endm
+
+    .macro resetterrainabilityflags
+    callnative BS_ResetTerrainAbilityFlags
+    .endm
 
 	@ Stores Healing Wish effect.
 	.macro storehealingwish battler:req

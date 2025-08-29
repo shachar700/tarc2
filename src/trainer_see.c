@@ -471,13 +471,7 @@ static u8 CheckTrainer(u8 objectEventId)
         }
     }
 
-    if (InBattlePyramid() && GetBattlePyramidTrainerFlag(objectEventId))
-        return 0;
-    if (InTrainerHill() && GetHillTrainerFlag(objectEventId))
-        return 0;
-
-    // RUN_SCRIPT type
-    if (scriptFlag >= TRAINER_TYPE_RUN_SCRIPT)
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || scriptFlag >= TRAINER_TYPE_RUN_SCRIPT)
     {
         if (!FlagGet(scriptFlag) && scriptPtr != NULL)
         {
