@@ -20,6 +20,7 @@ enum
     PAGE_FEATURE_BRANCH, // Feature Branch mid-battle evolution, ctf, zed, Shahar
     PAGE_SUPPORT, // Support, TAH, Maya
     PAGE_SPECIAL_THANKS, // Special Thanks
+    PAGE_CHECK_OTHER,
     /*PAGE_TITLE,
     PAGE_DIRECTOR,
     PAGE_ART_DIRECTOR,
@@ -277,6 +278,9 @@ static const u8 sCreditsText_BattleUI[]                       = _("Battle UI");
 static const u8 sCreditsText_Support[]                        = _("Support");
 static const u8 sCreditsText_Playtester[]                     = _("Playtesters");
 static const u8 sCreditsText_SpecialThanks[]                  = _("Special Thanks");
+static const u8 sCreditsText_CheckOther[]                   = _("Check My other ROM");
+
+static const u8 sCreditsText_PkmnValiantVersion[]             = _("POKéMON Valiant VERSION");
 
 static const u8 sCreditsText_aveontrainer[]                   = _("aveontrainer"); // obj gfx
 static const u8 sCreditsText_Xencleamas[]                     = _("Xencleamas"); // ow tiles
@@ -325,9 +329,12 @@ static const struct CreditsEntry sCreditsEntry_BattleUI                         
 static const struct CreditsEntry sCreditsEntry_Support                          = {0,  TRUE, sCreditsText_Support};
 static const struct CreditsEntry sCreditsEntry_Playtester                       = {0,  TRUE, sCreditsText_Playtester};
 static const struct CreditsEntry sCreditsEntry_SpecialThanks                    = {0,  TRUE, sCreditsText_SpecialThanks};
+static const struct CreditsEntry sCreditsEntry_CheckOther                       = {0,  TRUE, sCreditsText_CheckOther};
 
 static const struct CreditsEntry sCreditsEntry_Shahar                           = {0,  FALSE, sCreditsText_Shahar};
 static const struct CreditsEntry sCreditsEntry_Maya                             = {0,  FALSE, sCreditsText_Maya};
+
+static const struct CreditsEntry sCreditsEntry_PkmnValiantVersion               = { 7,  TRUE, sCreditsText_PkmnValiantVersion};
 
 static const struct CreditsEntry sCreditsEntry_aveontrainer                     = {0,  FALSE, sCreditsText_aveontrainer};
 static const struct CreditsEntry sCreditsEntry_Xencleamas                       = {0,  FALSE, sCreditsText_Xencleamas};
@@ -634,7 +641,13 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         _,
         _
     },
-
+    [PAGE_CHECK_OTHER] = {
+        _,
+        &sCreditsEntry_CheckOther,
+        &sCreditsEntry_PkmnValiantVersion,
+        _,
+        _
+    },
     /*
     [PAGE_DIRECTOR] = {
         _,

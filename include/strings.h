@@ -1548,6 +1548,7 @@ extern const u8 gText_PickCancel[];
 extern const u8 gText_AButtonExit[];
 extern const u8 gText_HOFCorrupted[];
 extern const u8 gText_WelcomeToHOF[];
+extern const u8 gText_SnapPhoto[];
 extern const u8 gText_Number[];
 extern const u8 gText_Level[];
 extern const u8 gText_IDNumber[];

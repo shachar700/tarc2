@@ -108,6 +108,7 @@ const u8 gText_DexSearchTypeNone[] = _("NONE");
 const u8 gText_SelectorArrow[] = _("▶");
 const u8 gText_EmptySpace[] = _(" "); // Unused
 const u8 gText_WelcomeToHOF[] = _("Friends and foes along the way!");
+const u8 gText_SnapPhoto[] = _("Take photo of stats and share in TAH");
 const u8 gText_HOFDexRating[] = _("Spotted POKéMON: {STR_VAR_1}!\nOwned POKéMON: {STR_VAR_2}!\pPROF. BIRCH's POKéDEX rating!\pPROF. BIRCH: Let's see…\p");
 const u8 gText_HOFDexSaving[] = _("SAVING…\nDON'T TURN OFF THE POWER.");
 const u8 gText_HOFCorrupted[] = _("The HALL OF FAME data is corrupted.");
