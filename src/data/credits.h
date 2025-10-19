@@ -278,7 +278,7 @@ static const u8 sCreditsText_BattleUI[]                       = _("Battle UI");
 static const u8 sCreditsText_Support[]                        = _("Support");
 static const u8 sCreditsText_Playtester[]                     = _("Playtesters");
 static const u8 sCreditsText_SpecialThanks[]                  = _("Special Thanks");
-static const u8 sCreditsText_CheckOther[]                   = _("Check My other ROM");
+static const u8 sCreditsText_CheckOther[]                     = _("Check My other ROM");
 
 static const u8 sCreditsText_PkmnValiantVersion[]             = _("POKéMON Valiant VERSION");
 
@@ -290,7 +290,7 @@ static const u8 sCreditsText_Nico[]                           = _("Nico"); // ba
 static const u8 sCreditsText_Archie[]                         = _("Archie"); // battle ui
 
 static const u8 sCreditsText_Karl[]                         = _("Karl"); // composer
-static const u8 sCreditsText_Aio[]                         = _("Aioe"); // playtester
+static const u8 sCreditsText_Aio[]                         = _("Aio"); // playtester
 
 static const u8 sCreditsText_AquasHideout[]                   = _("Team Aqua's Hideout Crew"); // support
 static const u8 sCreditsText_Maya[]                           = _("Maya"); // special thanks
